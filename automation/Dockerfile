@@ -16,12 +16,21 @@ RUN curl -fsSL "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_$
 # Instalar Claude Code CLI globalmente
 RUN npm install -g @anthropic-ai/claude-code
 
+# Criar usuário não-root (Claude Code bloqueia --dangerously-skip-permissions como root)
+RUN addgroup -S agent && adduser -S agent -G agent
+
 # Configurar git
-RUN git config --global user.email "claude@homelab" && \
-    git config --global user.name "Claude Code"
+RUN git config --system user.email "claude@homelab" && \
+    git config --system user.name "Claude Code"
+
+# Criar diretórios com permissão para o usuário agent
+RUN mkdir -p /workspace /home/agent/.claude && \
+    chown -R agent:agent /workspace /home/agent
 
 WORKDIR /workspace
 
 COPY . /app
+
+USER agent
 
 CMD ["node", "/app/server.js"]

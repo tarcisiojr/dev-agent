@@ -6,7 +6,7 @@ services:
     volumes:
       - ./automation:/app
       - workspace:/workspace
-      - claude-auth:/root/.claude
+      - claude-auth:/home/agent/.claude
     env_file:
       - .env
     restart: unless-stopped
