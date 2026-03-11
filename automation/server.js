@@ -251,6 +251,11 @@ async function executeJob(job) {
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log(`[fim] Issue #${job.issueId} — exit code: ${result.code} — duração: ${duration}s`);
 
+  if (result.code !== 0) {
+    console.log(`[stderr] Issue #${job.issueId}:\n${result.stderr}`);
+    console.log(`[stdout] Issue #${job.issueId}:\n${result.stdout.slice(-2000)}`);
+  }
+
   // Comentar resultado na issue
   if (result.timedOut) {
     await commentOnIssue(job, `⏱️ **Claude Code** excedeu o tempo limite de 30 minutos para esta issue. Pode ser necessário intervenção manual.`);
