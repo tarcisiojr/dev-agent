@@ -11,33 +11,80 @@ Agente autônomo que resolve issues do GitLab e GitHub usando Claude Code CLI. Q
 
 ## Setup
 
-1. Clone o repositório:
+### 1. Clone o repositório
 
 ```bash
 git clone <repo-url> dev-agent
 cd dev-agent
 ```
 
-2. Copie e configure as variáveis de ambiente:
+### 2. Configure o Tailscale
+
+O Tailscale Funnel expõe o webhook publicamente sem precisar de IP fixo ou port forwarding.
+
+**2.1. Crie uma conta** em [https://tailscale.com](https://tailscale.com) (login via Google, GitHub, Microsoft, etc.)
+
+**2.2. Habilite o Funnel no tailnet:**
+- Acesse [https://login.tailscale.com/admin/acls](https://login.tailscale.com/admin/acls)
+- Adicione no ACL policy (seção `nodeAttrs`):
+
+```json
+"nodeAttrs": [
+  {
+    "target": ["autogroup:member"],
+    "attr": ["funnel"]
+  }
+]
+```
+
+**2.3. Gere uma Auth Key:**
+- Acesse [https://login.tailscale.com/admin/settings/keys](https://login.tailscale.com/admin/settings/keys)
+- Clique em **Generate auth key**
+- Marque as opções:
+  - **Reusable**: sim (para que o container possa reiniciar)
+  - **Ephemeral**: não
+  - **Tags**: opcional
+- Copie a chave gerada (formato `tskey-auth-xxxxx`)
+
+**2.4. Copie a chave para o `.env`:**
 
 ```bash
 cp .env.example .env
-# Edite .env com seus tokens e secrets
+# Edite .env e cole a auth key em TS_AUTHKEY
 ```
 
-3. Suba os containers:
+### 3. Configure os tokens
+
+Edite o `.env` com os demais tokens necessários:
+
+- **GITLAB_SECRET / GITHUB_WEBHOOK_SECRET**: crie um secret aleatório (ex: `openssl rand -hex 32`)
+- **GITLAB_TOKEN**: gere em GitLab → Settings → Access Tokens (scopes: `api`)
+- **GITHUB_TOKEN**: gere em GitHub → Settings → Developer settings → Personal access tokens (scopes: `repo`)
+- **CLAUDE_CODE_OAUTH_TOKEN**: execute `claude setup-token` e copie o token gerado
+- **ALLOWED_USERS**: seus usernames do GitLab/GitHub separados por vírgula
+
+### 4. Suba os containers
 
 ```bash
 docker compose up -d
 ```
 
-4. Verifique se o Tailscale Funnel está ativo:
+### 5. Verifique o Tailscale Funnel
 
 ```bash
+# Verifique se o Tailscale conectou e o Funnel está ativo
 docker compose logs tailscale
+
+# O domínio público será algo como:
+# https://dev-agent.<seu-tailnet>.ts.net
 ```
 
-O domínio público será algo como `https://dev-agent.<seu-tailnet>.ts.net`.
+Para testar se o webhook está acessível:
+
+```bash
+curl -s https://dev-agent.<seu-tailnet>.ts.net/webhook
+# Deve retornar: {"error":"Not found"} (porque é GET, não POST)
+```
 
 ## Configuração de Webhook
 
