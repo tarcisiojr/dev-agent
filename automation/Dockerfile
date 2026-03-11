@@ -9,9 +9,8 @@ RUN GLAB_VERSION=$(curl -fsSL "https://gitlab.com/api/v4/projects/34675721/relea
     | tar -xz -C /usr/local/bin --strip-components=1 bin/glab
 
 # Instalar gh (GitHub CLI)
-RUN GH_VERSION=$(curl -fsSL "https://api.github.com/repos/cli/cli/releases/latest" | grep -o '"tag_name":"v[^"]*"' | head -1 | cut -d'"' -f4 | sed 's/^v//') && \
-    echo "Installing gh version: ${GH_VERSION}" && \
-    curl -fsSL "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH_VERSION}_linux_amd64.tar.gz" \
+ARG GH_VERSION=2.67.0
+RUN curl -fsSL "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH_VERSION}_linux_amd64.tar.gz" \
     | tar -xz -C /usr/local/bin --strip-components=1 "gh_${GH_VERSION}_linux_amd64/bin/gh"
 
 # Instalar Claude Code CLI globalmente
