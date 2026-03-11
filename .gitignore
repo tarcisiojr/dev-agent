@@ -1,0 +1,4 @@
+.env
+workspace/
+node_modules/
+tailscale-config/state/

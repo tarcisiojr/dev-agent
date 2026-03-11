@@ -1,0 +1,12 @@
+{
+  "name": "dev-agent",
+  "version": "1.0.0",
+  "description": "Agente autônomo que resolve issues via Claude Code CLI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

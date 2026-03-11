@@ -1,0 +1,34 @@
+services:
+  automation:
+    build:
+      context: ./automation
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./automation:/app
+      - workspace:/workspace
+      - claude-auth:/root/.claude
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  tailscale:
+    image: tailscale/tailscale:latest
+    hostname: dev-agent
+    volumes:
+      - tailscale-state:/var/lib/tailscale
+      - ./tailscale-config:/config
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_SERVE_CONFIG=/config/funnel.json
+      - TS_STATE_DIR=/var/lib/tailscale
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    restart: unless-stopped
+
+volumes:
+  workspace:
+  claude-auth:
+  tailscale-state:
