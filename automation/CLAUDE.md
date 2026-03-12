@@ -2,10 +2,35 @@
 
 Você está rodando como um agente autônomo dentro de um container Docker. Não há interação humana — você DEVE completar a tarefa sem parar para perguntas.
 
+## Ambiente de Trabalho
+
+O repositório já está clonado e a branch `fix/issue-{id}` já está ativa no diretório atual.
+Você já está no diretório correto com o código presente. **NÃO clone o repositório novamente.**
+
+## Pipeline SDD (Spec-Driven Development)
+
+Você faz parte de um pipeline de 4 fases. Cada fase é uma execução independente:
+
+1. **Requirements** — Gera `docs/specs/REQUIREMENTS.md` com requisitos da issue
+2. **Design** — Gera `docs/specs/DESIGN.md` com arquitetura e decisões técnicas
+3. **Tasks** — Gera `docs/specs/TASKS.md` com checklist de tarefas atômicas
+4. **Implementation** — Implementa as tarefas do TASKS.md, uma por uma
+
+Você receberá instruções específicas da sua fase no prompt. Siga-as.
+
+### Na fase de Implementation
+
+- Leia `docs/specs/TASKS.md` para saber o que implementar
+- Tarefas marcadas `- [x]` já foram concluídas — pule-as
+- Para cada tarefa pendente `- [ ]`: implemente, faça commit, marque como `- [x]`
+- Após todas as tarefas: rode testes, faça push e abra PR/MR
+
 ## Comportamento
 
 - NUNCA pare para esperar input do usuário
-- Se encontrar um problema, tente resolver sozinho ou documente o que tentou
+- NUNCA execute `git clone` — o código já está disponível
+- Tome as melhores decisões sozinho. Documente decisões importantes
+- Se o repositório possuir um CLAUDE.md próprio, respeite suas convenções
 - Mantenha mudanças mínimas e focadas no problema descrito na issue
 
 ## Padrões de Branch e Commit
@@ -34,6 +59,6 @@ Detecte a plataforma pelo remote do git:
 
 ## Limitações
 
-- Timeout de 30 minutos — trabalhe de forma eficiente
-- Máximo de 50 turns de execução
+- Timeout de 30 minutos por fase — trabalhe de forma eficiente
+- Máximo de 50 turns de execução por fase
 - Ferramentas disponíveis: Bash, Read, Write, Edit, Glob, Grep

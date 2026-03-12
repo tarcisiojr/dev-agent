@@ -1,7 +1,7 @@
 FROM node:22-alpine
 
 # Instalar dependências do sistema
-RUN apk add --no-cache git bash curl
+RUN apk add --no-cache git bash curl su-exec
 
 # Instalar glab (GitLab CLI)
 RUN GLAB_VERSION=$(curl -fsSL "https://gitlab.com/api/v4/projects/34675721/releases" | sed -n 's/.*"tag_name":"v\([^"]*\)".*/\1/p' | head -1) && \
@@ -30,7 +30,6 @@ RUN mkdir -p /workspace /home/agent/.claude && \
 WORKDIR /workspace
 
 COPY . /app
+RUN chmod +x /app/entrypoint.sh
 
-USER agent
-
-CMD ["node", "/app/server.js"]
+ENTRYPOINT ["/bin/sh", "/app/entrypoint.sh"]

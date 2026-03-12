@@ -3,10 +3,18 @@ const crypto = require('node:crypto');
 const { spawn } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
+const { loadJobs, upsertJob, generateJobId } = require('./jobStore');
+const {
+  buildRequirementsPrompt,
+  buildDesignPrompt,
+  buildTasksPrompt,
+  buildImplementationPrompt,
+} = require('./prompts');
 
 const PORT = 9000;
 const TIMEOUT_MS = 30 * 60 * 1000; // 30 minutos
 const WORKSPACE_DIR = '/workspace';
+const ISSUES_DIR = path.join(WORKSPACE_DIR, 'issues');
 
 // --- Fila sequencial ---
 
@@ -14,8 +22,29 @@ const queue = [];
 let processing = false;
 
 function enqueue(job) {
+  // Gerar ID e persistir com status queued
+  if (!job.id) {
+    job.id = generateJobId(job.platform, job.repoIdentifier, job.issueId);
+  }
+  if (!job.status) {
+    job.status = 'queued';
+    job.phase = null;
+    job.currentTask = 0;
+    job.totalTasks = 0;
+    job.retryCount = 0;
+    job.maxRetries = 3;
+    job.createdAt = job.createdAt || new Date().toISOString();
+    job.phases = {
+      requirements: 'pending',
+      design: 'pending',
+      tasks: 'pending',
+      implementation: 'pending',
+    };
+  }
+  upsertJob(job);
+
   queue.push(job);
-  console.log(`[fila] Issue #${job.issueId} adicionada. Tamanho da fila: ${queue.length}`);
+  console.log(`[fila] Issue #${job.issueId} adicionada (${job.id}). Tamanho da fila: ${queue.length}`);
   processNext();
 }
 
@@ -163,61 +192,66 @@ async function commentGitHub(job, message) {
   }
 }
 
-// --- Execução do Claude Code ---
+// --- Pipeline SDD ---
 
-function buildPrompt(job) {
-  const cliTool = job.platform === 'gitlab' ? 'glab' : 'gh';
-  const mrOrPr = job.platform === 'gitlab' ? 'Merge Request' : 'Pull Request';
-  const mrCommand = job.platform === 'gitlab'
-    ? 'glab mr create --fill --source-branch fix/issue-' + job.issueId
-    : 'gh pr create --fill --head fix/issue-' + job.issueId;
+/** Mapa de artefatos esperados por fase */
+const PHASE_ARTIFACTS = {
+  requirements: 'docs/specs/REQUIREMENTS.md',
+  design: 'docs/specs/DESIGN.md',
+  tasks: 'docs/specs/TASKS.md',
+  implementation: null, // verificado pelo exit code + push
+};
 
-  return `Você é um agente autônomo. Resolva a issue abaixo sem interação humana.
+/** Mapa de prompt builders por fase */
+const PHASE_PROMPT_BUILDERS = {
+  requirements: buildRequirementsPrompt,
+  design: buildDesignPrompt,
+  tasks: buildTasksPrompt,
+  implementation: buildImplementationPrompt,
+};
 
-Plataforma: ${job.platform}
-Repositório: ${job.repoUrl}
-Issue #${job.issueId}: ${job.title}
+/** Mensagens de progresso por fase concluída */
+const PHASE_COMMENTS = {
+  requirements: '📋 **Fase 1/4** — Requisitos definidos',
+  design: '🏗️ **Fase 2/4** — Design definido',
+  tasks: null, // tratado separadamente para contar tasks
+  implementation: null, // tratado separadamente
+};
 
-Descrição:
-${job.description}
+/** Ordem das fases do pipeline */
+const PHASE_ORDER = ['requirements', 'design', 'tasks', 'implementation'];
 
-Instruções:
-1. Clone o repositório: git clone ${job.repoUrl} .
-2. Crie a branch: git checkout -b fix/issue-${job.issueId}
-3. Analise o código e implemente a correção
-4. Rode os testes existentes para garantir que nada quebrou
-5. Faça commit das mudanças com mensagem descritiva referenciando a issue
-6. Faça push da branch: git push origin fix/issue-${job.issueId}
-7. Abra um ${mrOrPr}: ${mrCommand}
-
-IMPORTANTE:
-- Nunca pare para esperar input do usuário
-- Se não conseguir resolver, documente o que tentou
-- Mantenha as mudanças mínimas e focadas no problema`;
+/** Verifica se o artefato da fase existe no worktree */
+function verifyPhaseArtifact(worktreePath, phaseName) {
+  const artifact = PHASE_ARTIFACTS[phaseName];
+  if (!artifact) return true; // implementation não tem artefato fixo
+  return fs.existsSync(path.join(worktreePath, artifact));
 }
 
-async function executeJob(job) {
-  const startTime = Date.now();
-  console.log(`[início] Processando issue #${job.issueId} "${job.title}" (${job.platform}) — usuário: ${job.user}`);
+/** Conta tasks totais e concluídas no TASKS.md */
+function countTasks(worktreePath) {
+  const tasksPath = path.join(worktreePath, 'docs', 'specs', 'TASKS.md');
+  if (!fs.existsSync(tasksPath)) return { total: 0, done: 0 };
 
-  // Comentar na issue que o processamento iniciou
-  await commentOnIssue(job, `🤖 **Claude Code** está analisando esta issue. Acompanhe o progresso...`);
+  const content = fs.readFileSync(tasksPath, 'utf-8');
+  const allTasks = (content.match(/- \[[ x]\]/g) || []);
+  const doneTasks = (content.match(/- \[x\]/g) || []);
+  return { total: allTasks.length, done: doneTasks.length };
+}
 
-  // Criar diretório isolado
-  const issueDir = path.join(WORKSPACE_DIR, `issue-${job.issueId}`);
-  fs.mkdirSync(issueDir, { recursive: true });
-
-  const prompt = buildPrompt(job);
-
-  // Executar Claude Code via spawn
-  const result = await new Promise((resolve) => {
+/**
+ * Spawna o Claude Code com um prompt e retorna o resultado.
+ * Reutilizado por todas as fases.
+ */
+function spawnClaude(prompt, cwd) {
+  return new Promise((resolve) => {
     const proc = spawn('claude', [
       '-p', '-',
       '--allowedTools', 'Bash,Read,Write,Edit,Glob,Grep',
       '--dangerously-skip-permissions',
       '--max-turns', '50',
     ], {
-      cwd: issueDir,
+      cwd,
       env: {
         ...process.env,
         CLAUDE_CODE_OAUTH_TOKEN: process.env.CLAUDE_CODE_OAUTH_TOKEN,
@@ -231,38 +265,131 @@ async function executeJob(job) {
     proc.stdout.on('data', (data) => { stdout += data.toString(); });
     proc.stderr.on('data', (data) => { stderr += data.toString(); });
 
-    // Timeout de 30 minutos
     const timer = setTimeout(() => {
-      console.log(`[timeout] Issue #${job.issueId} excedeu 30 minutos. Enviando SIGTERM...`);
+      console.log(`[timeout] Fase excedeu ${TIMEOUT_MS / 60000} minutos. Enviando SIGTERM...`);
       proc.kill('SIGTERM');
     }, TIMEOUT_MS);
 
     proc.on('close', (code) => {
       clearTimeout(timer);
-      const timedOut = code === null;
-      resolve({ code, stdout, stderr, timedOut });
+      resolve({ code, stdout, stderr, timedOut: code === null });
     });
 
-    // Enviar prompt via stdin
     proc.stdin.write(prompt);
     proc.stdin.end();
   });
+}
 
-  const duration = ((Date.now() - startTime) / 1000).toFixed(1);
-  console.log(`[fim] Issue #${job.issueId} — exit code: ${result.code} — duração: ${duration}s`);
+/**
+ * Executa uma fase do pipeline SDD.
+ * Retorna true se a fase foi concluída com sucesso.
+ */
+async function runPhase(job, phaseName, worktreePath) {
+  const promptBuilder = PHASE_PROMPT_BUILDERS[phaseName];
+  const prompt = promptBuilder(job);
+
+  // Atualizar status no jobs.json
+  job.status = 'running';
+  job.phase = phaseName;
+  job.phases[phaseName] = 'running';
+  upsertJob(job);
+
+  console.log(`[fase] Issue #${job.issueId} — iniciando fase: ${phaseName}`);
+
+  const result = await spawnClaude(prompt, worktreePath);
+
+  console.log(`[fase] Issue #${job.issueId} — fase ${phaseName} — exit code: ${result.code}`);
 
   if (result.code !== 0) {
-    console.log(`[stderr] Issue #${job.issueId}:\n${result.stderr}`);
-    console.log(`[stdout] Issue #${job.issueId}:\n${result.stdout.slice(-2000)}`);
+    console.log(`[stderr] Issue #${job.issueId} (${phaseName}):\n${result.stderr}`);
+    console.log(`[stdout] Issue #${job.issueId} (${phaseName}):\n${result.stdout.slice(-2000)}`);
   }
 
-  // Comentar resultado na issue
-  if (result.timedOut) {
-    await commentOnIssue(job, `⏱️ **Claude Code** excedeu o tempo limite de 30 minutos para esta issue. Pode ser necessário intervenção manual.`);
-  } else if (result.code === 0) {
-    await commentOnIssue(job, `✅ **Claude Code** finalizou o trabalho nesta issue. Um Merge Request/Pull Request deve ter sido criado. Por favor, revise as mudanças.`);
-  } else {
-    await commentOnIssue(job, `❌ **Claude Code** não conseguiu resolver esta issue (exit code: ${result.code}). Pode ser necessário intervenção manual.`);
+  // Verificar se artefato foi criado
+  if (result.code === 0 && verifyPhaseArtifact(worktreePath, phaseName)) {
+    job.phases[phaseName] = 'done';
+    upsertJob(job);
+    return { success: true, result };
+  }
+
+  return { success: false, result };
+}
+
+// --- Execução do job ---
+
+async function executeJob(job) {
+  const startTime = Date.now();
+  console.log(`[início] Processando issue #${job.issueId} "${job.title}" (${job.platform}) — usuário: ${job.user}`);
+
+  // Comentar na issue que o processamento iniciou
+  await commentOnIssue(job, `🤖 **Claude Code** está analisando esta issue. Acompanhe o progresso...`);
+
+  // Criar diretório de trabalho isolado para a issue
+  const issueDir = path.join(ISSUES_DIR, `issue-${job.issueId}`);
+  fs.mkdirSync(issueDir, { recursive: true });
+
+  try {
+    // Executar cada fase sequencialmente, pulando as já concluídas
+    for (const phaseName of PHASE_ORDER) {
+      // Pular fases já concluídas (retry/retomada)
+      if (job.phases[phaseName] === 'done') {
+        console.log(`[fase] Issue #${job.issueId} — fase ${phaseName} já concluída, pulando`);
+        continue;
+      }
+
+      const { success, result } = await runPhase(job, phaseName, issueDir);
+
+      if (!success) {
+        // Verificar retry
+        job.retryCount = (job.retryCount || 0) + 1;
+
+        if (result.timedOut) {
+          await commentOnIssue(job, `⏱️ Fase **${phaseName}** excedeu o tempo limite. Retentando automaticamente... (tentativa ${job.retryCount}/${job.maxRetries})`);
+        }
+
+        if (job.retryCount < job.maxRetries) {
+          // Re-enfileirar para retry
+          job.status = 'queued';
+          job.phases[phaseName] = 'pending';
+          upsertJob(job);
+          console.log(`[retry] Issue #${job.issueId} — fase ${phaseName} falhou. Retry ${job.retryCount}/${job.maxRetries}`);
+          enqueue(job);
+          return;
+        }
+
+        // Limite de retries atingido
+        job.status = 'needs_help';
+        upsertJob(job);
+        await commentOnIssue(job, `🆘 Não consegui completar a fase **${phaseName}** após ${job.maxRetries} tentativas. Preciso de ajuda humana.`);
+        return;
+      }
+
+      // Fase concluída — comentar progresso
+      if (phaseName === 'tasks') {
+        const { total } = countTasks(issueDir);
+        job.totalTasks = total;
+        upsertJob(job);
+        await commentOnIssue(job, `📝 **Fase 3/4** — ${total} tarefas identificadas`);
+      } else if (phaseName === 'implementation') {
+        const { total, done } = countTasks(issueDir);
+        await commentOnIssue(job, `⚙️ Implementação concluída — ${done}/${total} tarefas`);
+      } else if (PHASE_COMMENTS[phaseName]) {
+        await commentOnIssue(job, PHASE_COMMENTS[phaseName]);
+      }
+    }
+
+    // Pipeline completo
+    const duration = ((Date.now() - startTime) / 1000).toFixed(1);
+    console.log(`[fim] Issue #${job.issueId} — pipeline SDD concluído — duração: ${duration}s`);
+
+    job.status = 'done';
+    upsertJob(job);
+    await commentOnIssue(job, `✅ **Claude Code** finalizou o trabalho nesta issue. Um PR/MR deve ter sido criado. Por favor, revise as mudanças.\n\n⏱️ Tempo total: ${duration}s`);
+
+  } finally {
+    // Limpar diretório de trabalho após conclusão
+    console.log(`[limpeza] Removendo diretório issue-${job.issueId}`);
+    fs.rmSync(issueDir, { recursive: true, force: true });
   }
 }
 
@@ -346,6 +473,45 @@ function handleWebhook(headers, body, res) {
   res.writeHead(200, { 'Content-Type': 'application/json' });
   res.end(JSON.stringify({ status: 'queued' }));
 }
+
+// --- Recovery de jobs na inicialização ---
+
+function recoverJobs() {
+  const jobs = loadJobs();
+  const jobList = Object.values(jobs);
+  let recovered = 0;
+
+  for (const job of jobList) {
+    if (job.status === 'running') {
+      // Job interrompido — marcar como interrupted e re-enfileirar
+      console.log(`[recovery] Job ${job.id} estava running — re-enfileirando`);
+      job.status = 'queued';
+      job.retryCount = (job.retryCount || 0) + 1;
+      // Marcar fase atual como pending para re-executar
+      if (job.phase && job.phases[job.phase] === 'running') {
+        job.phases[job.phase] = 'pending';
+      }
+      upsertJob(job);
+      enqueue(job);
+      recovered++;
+    } else if (job.status === 'queued') {
+      // Job na fila que não foi processado — re-enfileirar
+      console.log(`[recovery] Job ${job.id} estava queued — re-enfileirando`);
+      enqueue(job);
+      recovered++;
+    }
+    // Jobs done, failed, needs_help são ignorados
+  }
+
+  if (recovered > 0) {
+    console.log(`[recovery] ${recovered} job(s) recuperado(s)`);
+  } else {
+    console.log('[recovery] Nenhum job pendente encontrado');
+  }
+}
+
+// Recuperar jobs antes de iniciar o servidor
+recoverJobs();
 
 server.listen(PORT, () => {
   console.log(`[server] Dev Agent rodando na porta ${PORT}`);
