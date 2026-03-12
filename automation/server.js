@@ -228,6 +228,18 @@ function verifyPhaseArtifact(worktreePath, phaseName) {
   return fs.existsSync(path.join(worktreePath, artifact));
 }
 
+/** Lê o conteúdo de um artefato da fase, se existir */
+function readPhaseArtifact(issueDir, phaseName) {
+  const artifact = PHASE_ARTIFACTS[phaseName];
+  if (!artifact) return null;
+  const filePath = path.join(issueDir, artifact);
+  try {
+    return fs.readFileSync(filePath, 'utf-8');
+  } catch {
+    return null;
+  }
+}
+
 /** Conta tasks totais e concluídas no TASKS.md */
 function countTasks(worktreePath) {
   const tasksPath = path.join(worktreePath, 'docs', 'specs', 'TASKS.md');
@@ -364,17 +376,22 @@ async function executeJob(job) {
         return;
       }
 
-      // Fase concluída — comentar progresso
+      // Fase concluída — comentar progresso com conteúdo do artefato
+      const artifactContent = readPhaseArtifact(issueDir, phaseName);
+      const contentBlock = artifactContent
+        ? `\n\n<details>\n<summary>📄 Ver documento gerado</summary>\n\n${artifactContent}\n\n</details>`
+        : '';
+
       if (phaseName === 'tasks') {
         const { total } = countTasks(issueDir);
         job.totalTasks = total;
         upsertJob(job);
-        await commentOnIssue(job, `📝 **Fase 3/4** — ${total} tarefas identificadas`);
+        await commentOnIssue(job, `📝 **Fase 3/4** — ${total} tarefas identificadas${contentBlock}`);
       } else if (phaseName === 'implementation') {
         const { total, done } = countTasks(issueDir);
         await commentOnIssue(job, `⚙️ Implementação concluída — ${done}/${total} tarefas`);
       } else if (PHASE_COMMENTS[phaseName]) {
-        await commentOnIssue(job, PHASE_COMMENTS[phaseName]);
+        await commentOnIssue(job, `${PHASE_COMMENTS[phaseName]}${contentBlock}`);
       }
     }
 
