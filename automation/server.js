@@ -9,6 +9,7 @@ const {
   buildDesignPrompt,
   buildTasksPrompt,
   buildImplementationPrompt,
+  buildFinalizePrompt,
 } = require('./prompts');
 
 const PORT = 9000;
@@ -44,6 +45,7 @@ function enqueue(job) {
       design: 'pending',
       tasks: 'pending',
       implementation: 'pending',
+      finalize: 'pending',
     };
   }
   upsertJob(job);
@@ -204,7 +206,8 @@ const PHASE_ARTIFACTS = {
   requirements: 'docs/specs/REQUIREMENTS.md',
   design: 'docs/specs/DESIGN.md',
   tasks: 'docs/specs/TASKS.md',
-  implementation: null, // verificado pelo exit code + push
+  implementation: null, // verificado pelo exit code
+  finalize: null, // verificado pelo exit code (push + PR)
 };
 
 /** Mapa de prompt builders por fase */
@@ -213,18 +216,20 @@ const PHASE_PROMPT_BUILDERS = {
   design: buildDesignPrompt,
   tasks: buildTasksPrompt,
   implementation: buildImplementationPrompt,
+  finalize: buildFinalizePrompt,
 };
 
 /** Mensagens de progresso por fase concluída */
 const PHASE_COMMENTS = {
-  requirements: '📋 **Fase 1/4** — Requisitos definidos',
-  design: '🏗️ **Fase 2/4** — Design definido',
+  requirements: '📋 **Fase 1/5** — Requisitos definidos',
+  design: '🏗️ **Fase 2/5** — Design definido',
   tasks: null, // tratado separadamente para contar tasks
   implementation: null, // tratado separadamente
+  finalize: null, // tratado separadamente
 };
 
 /** Ordem das fases do pipeline */
-const PHASE_ORDER = ['requirements', 'design', 'tasks', 'implementation'];
+const PHASE_ORDER = ['requirements', 'design', 'tasks', 'implementation', 'finalize'];
 
 /** Verifica se o artefato da fase existe no worktree */
 function verifyPhaseArtifact(worktreePath, phaseName) {
@@ -391,10 +396,12 @@ async function executeJob(job) {
         const { total } = countTasks(issueDir);
         job.totalTasks = total;
         upsertJob(job);
-        await commentOnIssue(job, `📝 **Fase 3/4** — ${total} tarefas identificadas${contentBlock}`);
+        await commentOnIssue(job, `📝 **Fase 3/5** — ${total} tarefas identificadas${contentBlock}`);
       } else if (phaseName === 'implementation') {
         const { total, done } = countTasks(issueDir);
-        await commentOnIssue(job, `⚙️ Implementação concluída — ${done}/${total} tarefas`);
+        await commentOnIssue(job, `⚙️ **Fase 4/5** — Implementação concluída — ${done}/${total} tarefas`);
+      } else if (phaseName === 'finalize') {
+        await commentOnIssue(job, `🚀 **Fase 5/5** — Push e PR/MR criados`);
       } else if (PHASE_COMMENTS[phaseName]) {
         await commentOnIssue(job, `${PHASE_COMMENTS[phaseName]}${contentBlock}`);
       }

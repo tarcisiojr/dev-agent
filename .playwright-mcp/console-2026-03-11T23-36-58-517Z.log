@@ -1,0 +1,1149 @@
+[     365ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://ogads-pa.clients6.google.com/$rpc/google.internal.onegoogle.asyncdata.v1.AsyncDataService/GetAsyncData:0
+[    5537ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[    6711ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[    6711ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[    7780ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   13430ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   13431ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   14862ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   21295ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   21298ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   22231ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   23364ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   26317ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   28712ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   29252ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   29252ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   29268ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   31114ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   31115ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   31123ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   31124ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   31384ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[   36117ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  361277ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  361890ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  362038ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  362478ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  363880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  364207ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  364207ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  364207ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  364208ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  364240ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  367497ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  372427ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  380379ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  381279ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  384280ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  387612ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  390861ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  395065ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  398268ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  419603ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  421408ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  424410ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  429534ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  449057ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  450774ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  458293ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[  459487ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460022ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460070ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460070ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460690ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460696ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460696ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460696ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460698ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460701ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460701ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  460741ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  461336ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  461384ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  461384ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  464964ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/1:0
+[  469015ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/1:0
+[  554911ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  554911ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  555295ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  555296ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  555306ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  558308ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/1:0
+[  560582ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  561588ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  561603ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  561818ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  562523ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  562524ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  565525ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/1:0
+[  565648ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  566296ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  566296ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  566724ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  567290ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  567291ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  570292ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/1:0
+[  722180ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  722705ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  722706ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  724381ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  724975ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  724975ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  727976ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/1:0
+[  729629ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  730315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  730315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  730567ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  731222ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  731222ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  734223ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/1:0
+[  806058ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  806772ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  806772ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  807926ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  808449ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  808449ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  811301ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  812033ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  812033ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[  815035ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/1:0
+[ 1133456ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/1:0
+[ 1136209ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136284ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136298ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136301ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136341ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136491ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://private-user-images.githubusercontent.com/2327450/561927878-4ab370fb-52c4-4fcd-aa5d-4b9735eee7b2.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzMyNzMzMzAsIm5iZiI6MTc3MzI3MzAzMCwicGF0aCI6Ii8yMzI3NDUwLzU2MTkyNzg3OC00YWIzNzBmYi01MmM0LTRmY2QtYWE1ZC00Yjk3MzVlZWU3YjIucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDMxMSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjAzMTFUMjM1MDMwWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NDNhZWYyYjAzZmZmZmYyY2E3MTE0YTcwZWJiNDkwODEwNGE1OTQ5NTA2N2Q3NjZiYTVkZTM5NjljZmYwYzAxYiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.Smy3eQyK8P87BOWolCijiFhxIDRX-STJJvFD3zOtFbg:0
+[ 1136496ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136506ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136601ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1136607ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1137064ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1137092ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1141502ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330530ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330605ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330605ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330606ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330606ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330606ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330607ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330634ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330634ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330637ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330657ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330659ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330660ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330934ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1330940ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1331155ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1331159ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1371386ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1372054ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1372054ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389273ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389273ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389274ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389362ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389392ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389398ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389405ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389405ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389406ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389825ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1389825ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1390159ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1390165ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1394241ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1394802ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1394853ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396150ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396736ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396737ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396737ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396737ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396737ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396737ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396737ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396737ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396737ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1396737ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1397086ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398673ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398673ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398675ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398675ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398675ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398675ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398676ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398677ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398681ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398682ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1398717ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1399170ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1399176ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1399221ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1399226ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1421180ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1421180ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1421665ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1421695ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423704ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423704ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423704ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423704ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423705ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423705ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423705ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423709ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423717ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1423743ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1424252ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1424258ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1424331ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 1424336ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2942195ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2942195ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2942679ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2942679ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2942679ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2945863ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2947701ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2948035ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2948411ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2948411ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2965468ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2965492ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2966127ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2967833ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2978801ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2981671ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2985684ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2986287ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 2986288ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3063226ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3064621ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3064627ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3065353ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3065395ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066661ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066666ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066666ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3066794ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069302ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069302ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069302ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069302ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069303ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069303ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069303ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069308ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069314ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069322ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069322ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069346ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069346ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069949ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069949ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069949ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069949ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069949ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069949ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069949ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069951ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069957ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069958ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069958ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069958ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069961ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069996ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3069996ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070039ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070039ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070565ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070571ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070580ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070608ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070613ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070674ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070680ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070884ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3070891ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3072815ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3080268ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3082714ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3084535ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3085245ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3085246ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3172810ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3173481ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3173482ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3236795ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3236797ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3236798ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237172ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237208ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237209ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3237887ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239817ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239819ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239819ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239819ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239819ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239819ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239819ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239819ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239819ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239826ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239826ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239843ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3239843ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3240301ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3240309ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3240483ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3240491ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3240990ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3241206ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3241207ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3243354ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3246050ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3246734ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3246734ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3247702ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3257255ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3258297ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3259028ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3259028ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3263149ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3263767ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3263768ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3264579ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3265213ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 3265214ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 4989282ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 4989282ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 5069917ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 5069917ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6262728ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6262728ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6262728ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6262728ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6324948ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6324983ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6324983ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325878ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325879ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6325880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328075ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328075ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328075ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328075ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328076ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328076ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328076ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328076ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328076ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328083ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328083ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328083ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328083ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328083ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328083ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328115ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328120ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328199ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://private-user-images.githubusercontent.com/2327450/561927878-4ab370fb-52c4-4fcd-aa5d-4b9735eee7b2.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzMyNzU3ODMsIm5iZiI6MTc3MzI3NTQ4MywicGF0aCI6Ii8yMzI3NDUwLzU2MTkyNzg3OC00YWIzNzBmYi01MmM0LTRmY2QtYWE1ZC00Yjk3MzVlZWU3YjIucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDMxMiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjAzMTJUMDAzMTIzWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZDNhNTRlYjgxNTNiZmEyZGVjY2NmYmE0YWZiMzYzNjcwYmVmYmIyNDliMGNkNGIyOGFlOTliNzQ1OGNmMmM5MyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.vErfIMJ-01NOe2vi10L1bb3mAqhN-CFbvKqsC-RK3bU:0
+[ 6328596ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328608ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328849ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328849ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6328849ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6330396ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6332038ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6332534ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6332534ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6333824ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6339032ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6341051ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6341939ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6341939ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6343685ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6343900ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6343900ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6345019ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6345019ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6532453ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6532672ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6532672ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6532672ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6532672ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6533075ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6533075ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6662664ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6662880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6662880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6662899ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6662899ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6663254ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6663255ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6716057ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6716295ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6716295ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6716319ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6716319ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6716850ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6716850ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6774787ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6774899ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6774899ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6774911ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6774911ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6775392ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6775393ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6865734ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6865985ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6865985ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6865998ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6865998ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6866727ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 6866727ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7074527ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7074527ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7074527ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7074527ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7074527ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7074527ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7074527ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7074527ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7076436ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7077131ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7077131ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7082012ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7082610ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7082610ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7085340ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7085340ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7085361ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7085361ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7086578ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7087313ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7087314ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7089523ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7089523ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7089546ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7089546ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7092246ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7092406ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7092406ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7093018ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7093019ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7095353ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7095838ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7095839ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7096516ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7096516ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7098125ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7098787ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7098787ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7102976ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7103677ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7103677ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7115446ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7116085ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7116085ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7117704ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7118618ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7118618ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7121925ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7122689ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7122689ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7125429ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7126280ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7126281ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7129463ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7130684ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7130745ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7130747ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7130747ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7130750ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7130750ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7130770ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7130791ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7131029ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7131054ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7131054ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7131056ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7131064ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7131066ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7131067ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7131671ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7131684ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7135743ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7166036ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7166626ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7166627ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7180902ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7181434ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7181444ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7183514ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184314ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7184408ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%22I_kwDORh47Fc7yEiW_%22%5D%7D%7D:0
+[ 7184412ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22OpenClosedTabsQuery%22%2C%22query%22%3A%22e187c39de96f13c784ae5bce097a3196%22%2C%22variables%22%3A%7B%22name%22%3A%22ai-toolkit%22%2C%22owner%22%3A%22tarcisiojr%22%2C%22query%22%3A%22is%3Aissue%20archived%3Afalse%20repo%3Atarcisiojr%2Fai-toolkit%20sort%3Arelevance-desc%22%7D%7D:0
+[ 7185024ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueIndexPageQuery%22%2C%22query%22%3A%22b82fc7dd7436c13b7bf9ebc656cf514a%22%2C%22variables%22%3A%7B%22name%22%3A%22ai-toolkit%22%2C%22owner%22%3A%22tarcisiojr%22%2C%22query%22%3A%22is%3Aissue%20state%3Aopen%20repo%3Atarcisiojr%2Fai-toolkit%20sort%3Arelevance-desc%22%7D%7D:0
+[ 7186654ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7186654ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7191369ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7191373ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7191373ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7191373ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7191373ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7191374ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7191583ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_filter/issue_fields/dashboard:0
+[ 7191590ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7191602ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7191725ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/github-copilot/chat/entitlement:0
+[ 7192394ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192394ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192398ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192398ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192398ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192398ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192400ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192400ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192404ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192406ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192433ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7192627ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22useTimelineItemsBackQuery%22%2C%22query%22%3A%2284fef47845f98b66fc07a5c09e79e0ba%22%2C%22variables%22%3A%7B%22count%22%3A4%2C%22cursor%22%3Anull%2C%22id%22%3A%22I_kwDORh47Fc7yEiW_%22%7D%7D:0
+[ 7192818ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueViewerSecondaryViewQuery%22%2C%22query%22%3A%22cb9b35846fadf5f80ec3a2c05bf42a89%22%2C%22variables%22%3A%7B%22markAsRead%22%3Atrue%2C%22number%22%3A1%2C%22owner%22%3A%22tarcisiojr%22%2C%22repo%22%3A%22ai-toolkit%22%7D%7D:0
+[ 7193014ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7193020ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7193049ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7193049ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7196300ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22secondaryTimelineQuery%22%2C%22query%22%3A%22202bc6ed7ea8927c1a0ba9560f42bb32%22%2C%22variables%22%3A%7B%22nodes%22%3A%5B%22REFE_lADORh47Fc7yEiW_zwAAAAV4JLNu%22%2C%22REFE_lADORh47Fc7yEiW_zwAAAAV4JLOC%22%2C%22REFE_lADORh47Fc7yEiW_zwAAAAV4JLOY%22%2C%22REFE_lADORh47Fc7yEiW_zwAAAAV4JLOk%22%2C%22REFE_lADORh47Fc7yEiW_zwAAAAV4JLOq%22%5D%7D%7D:0
+[ 7196609ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7200010ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueViewerSubscriptionMetadataSubscription%22%2C%22query%22%3A%22b6640552b9f3e7444c0ed16be33ef7fb%22%2C%22scopeObject%22%3A%7B%22issue_timeline_updated%22%3Atrue%7D%2C%22variables%22%3A%7B%22issueId%22%3A%22I_kwDORh47Fc7yEiW_%22%7D%7D&subscription=1&subscriptionTopic=%3AissueUpdated%3Aid%3AI_kwDORh47Fc7yEiW_&dispatchTime=1773279416.8303354:0
+[ 7200011ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueViewerSubscriptionTimelineSubscription%22%2C%22query%22%3A%22f1ff873b5811910b20bb241af23dc171%22%2C%22scopeObject%22%3A%7B%22issue_timeline_updated%22%3Atrue%7D%2C%22variables%22%3A%7B%22connections%22%3A%5B%22client%3AI_kwDORh47Fc7yEiW_%3A__Issue__backTimelineItems_connection(visibleEventsOnly%3Atrue)%22%5D%2C%22issueId%22%3A%22I_kwDORh47Fc7yEiW_%22%2C%22skip%22%3A19%7D%7D&subscription=1&subscriptionTopic=%3AissueUpdated%3Aid%3AI_kwDORh47Fc7yEiW_&dispatchTime=1773279416.8303354:0
+[ 7249922ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7250400ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2:0
+[ 7250401ms] [ERROR] p @ https://github.githubassets.com/assets/26533-2961d590db2a09c3.js:15
+[ 7250624ms] [WARNING] A matching frame for #repo-content-turbo-frame was missing from the response, transforming into full-page Visit. @ https://github.githubassets.com/assets/26533-2961d590db2a09c3.js:15
+[ 7250722ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7257812ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7257812ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7257812ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7257814ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7257814ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7257910ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/page_data/diffstat:0
+[ 7257929ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_global-navigation/payloads.json?current_repo_nwo=tarcisiojr%2Fai-toolkit&repository=ai-toolkit&return_to=https%3A%2F%2Fgithub.com%2Ftarcisiojr%2Fai-toolkit%2Fpull%2F2&user_id=tarcisiojr&type=nav_menu:0
+[ 7258172ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_global-navigation/payloads.json?current_repo_nwo=tarcisiojr%2Fai-toolkit&repository=ai-toolkit&return_to=https%3A%2F%2Fgithub.com%2Ftarcisiojr%2Fai-toolkit%2Fpull%2F2&user_id=tarcisiojr&type=create_menu:0
+[ 7258212ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/page_data/merge_box?merge_method=MERGE&bypass_requirements=false:0
+[ 7258258ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7258258ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7258258ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7258367ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/partials/processing_indicator:0
+[ 7262820ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7265362ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7265510ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/issues/2:0
+[ 7266807ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7266807ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7266807ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7266807ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7266808ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7266881ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/page_data/diffstat:0
+[ 7266911ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_global-navigation/payloads.json?current_repo_nwo=tarcisiojr%2Fai-toolkit&repository=ai-toolkit&return_to=https%3A%2F%2Fgithub.com%2Ftarcisiojr%2Fai-toolkit%2Fpull%2F2&user_id=tarcisiojr&type=create_menu:0
+[ 7266926ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/page_data/status_checks:0
+[ 7267138ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/commits/checks-statuses-rollups:0
+[ 7267367ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_side-panels/user.json:0
+[ 7267436ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7267438ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7267438ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7271765ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7283108ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7283117ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7284852ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7288233ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/page_data/header:0
+[ 7288240ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/partials/form_actions:0
+[ 7290153ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/page_data/merge_box?merge_method=MERGE&bypass_requirements=false:0
+[ 7295738ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7295748ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7295748ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7295748ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7295749ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7295921ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/commits/checks-statuses-rollups:0
+[ 7295931ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_global-navigation/payloads.json?current_repo_nwo=tarcisiojr%2Fai-toolkit&repository=ai-toolkit&return_to=https%3A%2F%2Fgithub.com%2Ftarcisiojr%2Fai-toolkit%2Fpull%2F2&user_id=tarcisiojr&type=user_menu:0
+[ 7296053ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/page_data/tab_counts:0
+[ 7296509ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/pull/2/page_data/status_checks:0
+[ 7296632ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7296632ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7297226ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7297389ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/issues:0
+[ 7297390ms] [ERROR] p @ https://github.githubassets.com/assets/26533-2961d590db2a09c3.js:15
+[ 7297618ms] [WARNING] A matching frame for #repo-content-turbo-frame was missing from the response, transforming into full-page Visit. @ https://github.githubassets.com/assets/26533-2961d590db2a09c3.js:15
+[ 7297688ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7300742ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7301193ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7301193ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7301194ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7301194ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7301195ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7301558ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_global-navigation/payloads.json?current_repo_nwo=tarcisiojr%2Fai-toolkit&repository=ai-toolkit&return_to=https%3A%2F%2Fgithub.com%2Ftarcisiojr%2Fai-toolkit%2Fissues&user_id=tarcisiojr&type=create_menu:0
+[ 7301585ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22OpenClosedTabsQuery%22%2C%22query%22%3A%22e187c39de96f13c784ae5bce097a3196%22%2C%22variables%22%3A%7B%22name%22%3A%22ai-toolkit%22%2C%22owner%22%3A%22tarcisiojr%22%2C%22query%22%3A%22is%3Aissue%20archived%3Afalse%20repo%3Atarcisiojr%2Fai-toolkit%20sort%3Arelevance-desc%22%7D%7D:0
+[ 7305275ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7306181ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7306202ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7306202ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7306227ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 7306483ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://github.com/tarcisiojr/ai-toolkit/tree-commit-info:0
+[ 7309712ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit:0
+[ 7314727ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit:0
+[ 9068244ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9068245ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9068755ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9068774ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9071775ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit:0
+[ 9100977ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9102022ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9102023ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9103761ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9104042ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9104042ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9104042ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9104043ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9107956ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[ 9121098ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9124099ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[ 9127607ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9130607ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[ 9133372ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9136372ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[ 9161045ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9163857ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9166858ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[ 9171894ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9172461ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9172517ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9172517ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173025ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173030ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173031ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173034ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173034ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173038ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173041ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173074ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173606ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173606ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9173606ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9175847ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9176879ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9176896ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9177113ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9177113ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9177114ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9179106ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9180008ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9180513ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9180513ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9182598ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9183107ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9183107ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9186108ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/3:0
+[ 9312903ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9313506ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9313506ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9316507ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/3:0
+[ 9454057ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9454648ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9454649ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9457650ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/3:0
+[ 9520670ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9520861ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9521352ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9521353ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9524353ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/3:0
+[ 9788822ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9789049ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9789546ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9789547ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9792550ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/3:0
+[ 9803654ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9803900ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9804313ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9804313ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[ 9807316ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/3:0
+[10637258ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10637258ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10640260ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/3:0
+[10642094ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10642625ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10642655ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10645079ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10647071ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10647084ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10647593ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10647593ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10647594ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10649632ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10650519ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10650534ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10650535ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10650920ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10650920ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10650920ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10652082ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10654348ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656318ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656319ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656427ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656427ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656436ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656475ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656475ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656475ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656475ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656490ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656491ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656491ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656681ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10656687ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10657189ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10657194ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666182ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666312ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666315ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666321ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666321ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666341ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666341ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666342ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666342ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666396ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666406ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666407ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666407ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666407ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666409ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666709ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666717ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666968ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10666971ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10671321ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10675222ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10675222ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10683160ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10708178ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10708660ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10708664ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10708664ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10708664ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10708664ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10708664ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10708701ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710012ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710012ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710012ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710012ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710015ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710015ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710017ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710017ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710017ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10710043ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10728346ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10728834ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10728881ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10728898ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10802834ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10803909ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10803910ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10803914ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10804359ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10804359ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10804359ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10808689ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10809991ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10813285ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10813286ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10813293ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10813294ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10813295ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10813733ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10813733ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10813773ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10815243ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10815622ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10815622ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10815622ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10818289ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10822719ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10822732ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10823722ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10823723ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10823725ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10828203ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10828221ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10829184ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10829194ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10830211ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10830212ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10830212ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10836967ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10836981ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10839120ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10839131ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10840175ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10840175ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10840186ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10845026ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10845040ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10846848ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10847356ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10847356ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10847364ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10847364ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10848128ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10848128ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10848128ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10851137ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10851584ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10851585ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10851588ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10851588ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10861572ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10862659ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10874755ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875455ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875455ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875455ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875455ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875455ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875456ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875456ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875456ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875456ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10875456ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876783ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876783ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876786ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876786ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876786ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876786ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876790ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876790ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876799ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876799ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876799ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876803ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876804ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876804ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10876828ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10877396ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10877403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10877563ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10877568ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10878829ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10879257ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10879299ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10882347ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10882384ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10883361ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10883362ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10883363ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884169ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884169ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884169ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884169ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884169ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884169ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884169ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884170ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884170ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10884170ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885665ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885665ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885671ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885671ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885671ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885671ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885672ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885672ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885678ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885678ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885678ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885682ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885685ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885685ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10885698ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10886299ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10886307ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10886411ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10886415ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10887367ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10901551ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10901637ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10901671ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10902297ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10902298ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908402ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908403ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10908423ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10914517ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10915435ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10915456ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10915485ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10920913ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10921747ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10921806ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10967829ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10968924ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10968963ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10968982ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10974812ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10974813ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10975564ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10975682ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10975715ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10975731ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10995472ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10996690ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10997189ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10997189ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10997215ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[10999363ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11001323ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11001906ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11001906ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11004128ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11004457ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11004457ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11004457ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11004459ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11004492ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11012698ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/new:0
+[11018458ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11018949ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11018994ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11018995ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11019513ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11019515ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11019515ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11019515ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11019516ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11019518ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11019518ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11019547ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11020042ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11020069ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11020073ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11021825ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11027713ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/5:0
+[11051596ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11051605ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11051969ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11051970ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11051970ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11054972ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/5:0
+[11118406ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11121081ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11121706ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11121706ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11124587ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11125096ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11125096ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11128098ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/5:0
+[11205982ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11206540ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11206542ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11209543ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/5:0
+[11242190ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11245598ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/5:0
+[11276905ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11277468ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11277468ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11281349ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/issues/5:0
+[11315705ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11316635ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11316693ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11316723ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11319723ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/settings:0
+[11320124ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11320671ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11323682ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/settings/actions:0
+[11328333ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/settings/actions:0
+[11329444ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11330131ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11333381ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/settings/security_analysis:0
+[11336047ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11336595ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11339607ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/settings/actions:0
+[11344227ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/settings/actions:0
+[11346619ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11349809ms] [WARNING] The resource https://github.com/_graphql?body=%7B%22persistedQueryName%22%3A%22IssueRowSecondaryQuery%22%2C%22query%22%3A%22bee910d8e2ecf723f793a48bcf864450%22%2C%22variables%22%3A%7B%22includeReactions%22%3Afalse%2C%22nodes%22%3A%5B%5D%7D%7D was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/tarcisiojr/ai-toolkit/settings/actions:0
+[11352866ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11352871ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11353694ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11353694ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11353695ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11355905ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356623ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356623ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356623ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356623ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356624ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356624ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356624ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356624ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356624ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11356624ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357800ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357800ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357802ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357802ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357802ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357802ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357804ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357804ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357808ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357808ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357809ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357824ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357824ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357824ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357838ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11357871ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11358280ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11358284ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11358610ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11358611ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11392923ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11393318ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11393318ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11393318ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11393319ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11406516ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11414415ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11424631ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11437685ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11451558ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11463363ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11470212ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11477015ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11477523ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11477570ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11477570ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478038ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478043ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478043ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478043ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478043ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478046ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478059ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478622ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478622ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478626ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478817ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478818ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478818ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478818ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478818ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11478818ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482706ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482739ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482739ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482739ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482739ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482739ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482740ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482740ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482740ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482754ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482754ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482755ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482757ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482757ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482757ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482757ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482757ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482757ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482757ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11482757ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485151ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485151ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485153ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485153ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485153ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485154ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485155ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485155ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485162ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485162ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485162ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485179ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485180ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485180ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485670ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485676ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485796ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11485834ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0
+[11487711ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://collector.github.com/github/collect:0

@@ -1,0 +1,2 @@
+[    1128ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://new-sentry.gitlab.net/api/4/envelope/?sentry_version=7&sentry_key=f5573e26de8f4293b285e556c35dfd6e&sentry_client=sentry.javascript.browser%2F10.40.0:0
+[   23298ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://new-sentry.gitlab.net/api/4/envelope/?sentry_version=7&sentry_key=f5573e26de8f4293b285e556c35dfd6e&sentry_client=sentry.javascript.browser%2F10.40.0:0

@@ -9,12 +9,13 @@ Você já está no diretório correto com o código presente. **NÃO clone o rep
 
 ## Pipeline SDD (Spec-Driven Development)
 
-Você faz parte de um pipeline de 4 fases. Cada fase é uma execução independente:
+Você faz parte de um pipeline de 5 fases. Cada fase é uma execução independente:
 
 1. **Requirements** — Gera `docs/specs/REQUIREMENTS.md` com requisitos da issue
 2. **Design** — Gera `docs/specs/DESIGN.md` com arquitetura e decisões técnicas
 3. **Tasks** — Gera `docs/specs/TASKS.md` com checklist de tarefas atômicas
 4. **Implementation** — Implementa as tarefas do TASKS.md, uma por uma
+5. **Finalize** — Faz push da branch e abre PR/MR
 
 Você receberá instruções específicas da sua fase no prompt. Siga-as.
 
@@ -23,7 +24,13 @@ Você receberá instruções específicas da sua fase no prompt. Siga-as.
 - Leia `docs/specs/TASKS.md` para saber o que implementar
 - Tarefas marcadas `- [x]` já foram concluídas — pule-as
 - Para cada tarefa pendente `- [ ]`: implemente, faça commit, marque como `- [x]`
-- Após todas as tarefas: rode testes, faça push e abra PR/MR
+- NÃO faça push nem abra PR/MR — isso será feito na fase Finalize
+
+### Na fase de Finalize
+
+- Faça push da branch para o remote
+- Abra um PR/MR com as mudanças
+- Se já existir um PR/MR, confirme e prossiga
 
 ## Comportamento
 

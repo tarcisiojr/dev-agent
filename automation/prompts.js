@@ -130,11 +130,6 @@ ${AUTONOMY_RULES}`;
 }
 
 function buildImplementationPrompt(job) {
-  const mrOrPr = job.platform === 'gitlab' ? 'Merge Request' : 'Pull Request';
-  const mrCommand = job.platform === 'gitlab'
-    ? 'glab mr create --fill --source-branch fix/issue-' + job.issueId
-    : 'gh pr create --fill --head fix/issue-' + job.issueId;
-
   return `Você é um agente autônomo executando a FASE 4 (Implementação) de um pipeline SDD.
 
 Plataforma: ${job.platform}
@@ -153,12 +148,43 @@ INSTRUÇÕES:
    b. Faça commit com mensagem descritiva referenciando a issue
    c. Atualize o TASKS.md marcando a tarefa como concluída: - [x]
 4. Rode os testes existentes para garantir que nada quebrou
-5. Após todas as tarefas concluídas:
-   a. Faça push da branch: git push origin fix/issue-${job.issueId}
-   b. Abra um ${mrOrPr}: ${mrCommand}
+
+NÃO faça push nem abra PR/MR — isso será feito em uma fase separada.
 
 IMPORTANTE: Se já existem tarefas marcadas como - [x], elas já foram implementadas.
 Continue a partir da primeira tarefa pendente (- [ ]).
+
+${AUTONOMY_RULES}`;
+}
+
+function buildFinalizePrompt(job) {
+  const mrOrPr = job.platform === 'gitlab' ? 'Merge Request' : 'Pull Request';
+  const mrCommand = job.platform === 'gitlab'
+    ? 'glab mr create --fill --source-branch fix/issue-' + job.issueId
+    : 'gh pr create --fill --head fix/issue-' + job.issueId;
+
+  return `Você é um agente autônomo executando a FASE 5 (Finalização) de um pipeline SDD.
+
+Plataforma: ${job.platform}
+Repositório: ${job.repoUrl}
+Issue #${job.issueId}: ${job.title}
+
+${gitVerifyBlock(job)}
+
+OBJETIVO: Faça push da branch e abra um ${mrOrPr}.
+
+INSTRUÇÕES:
+1. Verifique que o repositório está correto e na branch fix/issue-${job.issueId}
+2. Verifique que existem commits na branch (git log --oneline origin/main..HEAD)
+3. Faça push da branch: git push origin fix/issue-${job.issueId}
+4. Abra um ${mrOrPr}: ${mrCommand}
+5. Confirme que o ${mrOrPr} foi criado com sucesso
+
+Se o push falhar por causa de conflitos, tente fazer rebase:
+   git fetch origin && git rebase origin/main
+   Resolva conflitos se necessário, depois faça push novamente.
+
+Se o ${mrOrPr} já existir, apenas confirme e prossiga.
 
 ${AUTONOMY_RULES}`;
 }
@@ -168,4 +194,5 @@ module.exports = {
   buildDesignPrompt,
   buildTasksPrompt,
   buildImplementationPrompt,
+  buildFinalizePrompt,
 };
