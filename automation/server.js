@@ -336,8 +336,8 @@ async function executeJob(job) {
   // Comentar na issue que o processamento iniciou
   await commentOnIssue(job, `🤖 **Claude Code** está analisando esta issue. Acompanhe o progresso...`);
 
-  // Criar diretório de trabalho isolado para a issue
-  const issueDir = path.join(ISSUES_DIR, `issue-${job.issueId}`);
+  // Criar diretório de trabalho isolado usando job ID (único por plataforma/repo/issue)
+  const issueDir = path.join(ISSUES_DIR, job.id);
   fs.mkdirSync(issueDir, { recursive: true });
 
   try {
