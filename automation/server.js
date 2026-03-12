@@ -16,6 +16,11 @@ const TIMEOUT_MS = 30 * 60 * 1000; // 30 minutos
 const WORKSPACE_DIR = '/workspace';
 const ISSUES_DIR = path.join(WORKSPACE_DIR, 'issues');
 
+/** Gera tag de log com contexto do job: [platform/repo#issue] */
+function jobTag(job) {
+  return `[${job.platform}/${job.repoIdentifier}#${job.issueId}]`;
+}
+
 // --- Fila sequencial ---
 
 const queue = [];
@@ -44,7 +49,7 @@ function enqueue(job) {
   upsertJob(job);
 
   queue.push(job);
-  console.log(`[fila] Issue #${job.issueId} adicionada (${job.id}). Tamanho da fila: ${queue.length}`);
+  console.log(`[fila] ${jobTag(job)} adicionada. Tamanho da fila: ${queue.length}`);
   processNext();
 }
 
@@ -56,7 +61,7 @@ async function processNext() {
   try {
     await executeJob(job);
   } catch (err) {
-    console.error(`[erro] Falha ao processar issue #${job.issueId}:`, err.message);
+    console.error(`[erro] ${jobTag(job)} Falha ao processar:`, err.message);
   } finally {
     processing = false;
     processNext();
@@ -153,7 +158,7 @@ async function commentOnIssue(job, message) {
       await commentGitHub(job, message);
     }
   } catch (err) {
-    console.error(`[erro] Falha ao comentar na issue #${job.issueId}:`, err.message);
+    console.error(`[erro] ${jobTag(job)} Falha ao comentar na issue:`, err.message);
   }
 }
 
@@ -278,7 +283,7 @@ function spawnClaude(prompt, cwd) {
     proc.stderr.on('data', (data) => { stderr += data.toString(); });
 
     const timer = setTimeout(() => {
-      console.log(`[timeout] Fase excedeu ${TIMEOUT_MS / 60000} minutos. Enviando SIGTERM...`);
+      console.log(`[timeout] Spawn excedeu ${TIMEOUT_MS / 60000} minutos. Enviando SIGTERM...`);
       proc.kill('SIGTERM');
     }, TIMEOUT_MS);
 
@@ -306,15 +311,15 @@ async function runPhase(job, phaseName, worktreePath) {
   job.phases[phaseName] = 'running';
   upsertJob(job);
 
-  console.log(`[fase] Issue #${job.issueId} — iniciando fase: ${phaseName}`);
+  console.log(`[fase] ${jobTag(job)} iniciando fase: ${phaseName}`);
 
   const result = await spawnClaude(prompt, worktreePath);
 
-  console.log(`[fase] Issue #${job.issueId} — fase ${phaseName} — exit code: ${result.code}`);
+  console.log(`[fase] ${jobTag(job)} fase ${phaseName} — exit code: ${result.code}`);
 
   if (result.code !== 0) {
-    console.log(`[stderr] Issue #${job.issueId} (${phaseName}):\n${result.stderr}`);
-    console.log(`[stdout] Issue #${job.issueId} (${phaseName}):\n${result.stdout.slice(-2000)}`);
+    console.log(`[stderr] ${jobTag(job)} (${phaseName}):\n${result.stderr}`);
+    console.log(`[stdout] ${jobTag(job)} (${phaseName}):\n${result.stdout.slice(-2000)}`);
   }
 
   // Verificar se artefato foi criado
@@ -331,7 +336,7 @@ async function runPhase(job, phaseName, worktreePath) {
 
 async function executeJob(job) {
   const startTime = Date.now();
-  console.log(`[início] Processando issue #${job.issueId} "${job.title}" (${job.platform}) — usuário: ${job.user}`);
+  console.log(`[início] ${jobTag(job)} "${job.title}" — usuário: ${job.user}`);
 
   // Comentar na issue que o processamento iniciou
   await commentOnIssue(job, `🤖 **Claude Code** está analisando esta issue. Acompanhe o progresso...`);
@@ -345,7 +350,7 @@ async function executeJob(job) {
     for (const phaseName of PHASE_ORDER) {
       // Pular fases já concluídas (retry/retomada)
       if (job.phases[phaseName] === 'done') {
-        console.log(`[fase] Issue #${job.issueId} — fase ${phaseName} já concluída, pulando`);
+        console.log(`[fase] ${jobTag(job)} fase ${phaseName} já concluída, pulando`);
         continue;
       }
 
@@ -364,7 +369,7 @@ async function executeJob(job) {
           job.status = 'queued';
           job.phases[phaseName] = 'pending';
           upsertJob(job);
-          console.log(`[retry] Issue #${job.issueId} — fase ${phaseName} falhou. Retry ${job.retryCount}/${job.maxRetries}`);
+          console.log(`[retry] ${jobTag(job)} fase ${phaseName} falhou. Retry ${job.retryCount}/${job.maxRetries}`);
           enqueue(job);
           return;
         }
@@ -397,7 +402,7 @@ async function executeJob(job) {
 
     // Pipeline completo
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
-    console.log(`[fim] Issue #${job.issueId} — pipeline SDD concluído — duração: ${duration}s`);
+    console.log(`[fim] ${jobTag(job)} pipeline SDD concluído — duração: ${duration}s`);
 
     job.status = 'done';
     upsertJob(job);
@@ -405,7 +410,7 @@ async function executeJob(job) {
 
   } finally {
     // Limpar diretório de trabalho após conclusão
-    console.log(`[limpeza] Removendo diretório issue-${job.issueId}`);
+    console.log(`[limpeza] ${jobTag(job)} removendo diretório de trabalho`);
     fs.rmSync(issueDir, { recursive: true, force: true });
   }
 }
