@@ -1,32 +1,47 @@
 # Dev Agent
 
-Agente autônomo que resolve issues do GitLab e GitHub usando Claude Code CLI. Quando um maintainer adiciona a label `ai-fix` a uma issue, o sistema clona o repositório, implementa a solução, roda testes e abre um Merge Request/Pull Request automaticamente.
+Autonomous agent that resolves GitLab and GitHub issues using Claude Code CLI. When a maintainer adds the `ai-fix` label to an issue, the system clones the repository, implements a solution through a Spec-Driven Development (SDD) pipeline, runs tests, and opens a Merge Request/Pull Request automatically.
 
-## Pré-requisitos
+## How It Works
 
-- Docker e Docker Compose
-- Conta Tailscale com Funnel habilitado
-- Token OAuth do Claude Code (`claude setup-token`)
-- Tokens de acesso: GitLab (PRIVATE-TOKEN) e/ou GitHub (PAT)
+1. A webhook fires when the `ai-fix` label is added to an issue
+2. The server validates the request and enqueues the job
+3. Claude Code executes 5 sequential SDD phases:
+   - **Requirements** — generates `REQUIREMENTS.md`
+   - **Design** — generates `DESIGN.md`
+   - **Tasks** — generates `TASKS.md`
+   - **Implementation** — executes tasks with atomic commits
+   - **Finalize** — pushes the branch and opens a MR/PR
+4. Each phase produces spec documents that feed the next phase
+5. The agent comments on the issue with progress and results
+
+> **Note:** Only users listed in `ALLOWED_USERS` can trigger the agent.
+
+## Prerequisites
+
+- Docker and Docker Compose
+- Tailscale account with Funnel enabled
+- Claude Code OAuth token (`claude setup-token`)
+- Access tokens: GitLab (PRIVATE-TOKEN) and/or GitHub (PAT)
 
 ## Setup
 
-### 1. Clone o repositório
+### 1. Clone the repository
 
 ```bash
 git clone <repo-url> dev-agent
 cd dev-agent
 ```
 
-### 2. Configure o Tailscale
+### 2. Configure Tailscale
 
-O Tailscale Funnel expõe o webhook publicamente sem precisar de IP fixo ou port forwarding.
+Tailscale Funnel exposes the webhook publicly without a static IP or port forwarding.
 
-**2.1. Crie uma conta** em [https://tailscale.com](https://tailscale.com) (login via Google, GitHub, Microsoft, etc.)
+**2.1. Create an account** at [https://tailscale.com](https://tailscale.com) (login via Google, GitHub, Microsoft, etc.)
 
-**2.2. Habilite o Funnel no tailnet:**
-- Acesse [https://login.tailscale.com/admin/acls](https://login.tailscale.com/admin/acls)
-- Adicione no ACL policy (seção `nodeAttrs`):
+**2.2. Enable Funnel on your tailnet:**
+- Go to [https://login.tailscale.com/admin/acls](https://login.tailscale.com/admin/acls)
+- Add to the ACL policy (`nodeAttrs` section):
 
 ```json
 "nodeAttrs": [
@@ -37,102 +52,195 @@ O Tailscale Funnel expõe o webhook publicamente sem precisar de IP fixo ou port
 ]
 ```
 
-**2.3. Gere uma Auth Key:**
-- Acesse [https://login.tailscale.com/admin/settings/keys](https://login.tailscale.com/admin/settings/keys)
-- Clique em **Generate auth key**
-- Marque as opções:
-  - **Reusable**: sim (para que o container possa reiniciar)
-  - **Ephemeral**: não
-  - **Tags**: opcional
-- Copie a chave gerada (formato `tskey-auth-xxxxx`)
+**2.3. Generate an Auth Key:**
+- Go to [https://login.tailscale.com/admin/settings/keys](https://login.tailscale.com/admin/settings/keys)
+- Click **Generate auth key**
+- Options:
+  - **Reusable**: yes (so the container can restart)
+  - **Ephemeral**: no
+  - **Tags**: optional
+- Copy the generated key (format: `tskey-auth-xxxxx`)
 
-**2.4. Copie a chave para o `.env`:**
+**2.4. Copy the key to `.env`:**
 
 ```bash
 cp .env.example .env
-# Edite .env e cole a auth key em TS_AUTHKEY
+# Edit .env and paste the auth key in TS_AUTHKEY
 ```
 
-### 3. Configure os tokens
+### 3. Configure tokens
 
-Edite o `.env` com os demais tokens necessários:
+Edit `.env` with the remaining tokens:
 
-- **GITLAB_SECRET / GITHUB_WEBHOOK_SECRET**: crie um secret aleatório (ex: `openssl rand -hex 32`)
-- **GITLAB_TOKEN**: gere em GitLab → Settings → Access Tokens (scopes: `api`)
-- **GITHUB_TOKEN**: gere em GitHub → Settings → Developer settings → Personal access tokens (scopes: `repo`)
-- **CLAUDE_CODE_OAUTH_TOKEN**: execute `claude setup-token` e copie o token gerado
-- **ALLOWED_USERS**: seus usernames do GitLab/GitHub separados por vírgula
+- **GITLAB_SECRET / GITHUB_WEBHOOK_SECRET**: create a random secret (e.g., `openssl rand -hex 32`)
+- **GITLAB_TOKEN**: generate at GitLab → Settings → Access Tokens (scopes: `api`)
+- **GITHUB_TOKEN**: generate at GitHub → Settings → Developer settings → Personal access tokens (scopes: `repo`)
+- **CLAUDE_CODE_OAUTH_TOKEN**: run `claude setup-token` and copy the generated token
+- **ALLOWED_USERS**: your GitLab/GitHub usernames, comma-separated
 
-### 4. Suba os containers
+### 4. Start the containers
 
 ```bash
 docker compose up -d
 ```
 
-### 5. Verifique o Tailscale Funnel
+### 5. Verify Tailscale Funnel
 
 ```bash
-# Verifique se o Tailscale conectou e o Funnel está ativo
+# Check that Tailscale connected and Funnel is active
 docker compose logs tailscale
 
-# O domínio público será algo como:
-# https://dev-agent.<seu-tailnet>.ts.net
+# The public domain will be something like:
+# https://dev-agent.<your-tailnet>.ts.net
 ```
 
-Para testar se o webhook está acessível:
+To test if the webhook is reachable:
 
 ```bash
-curl -s https://dev-agent.<seu-tailnet>.ts.net/webhook
-# Deve retornar: {"error":"Not found"} (porque é GET, não POST)
+curl -s https://dev-agent.<your-tailnet>.ts.net/webhook
+# Should return: {"error":"Not found"} (because it's GET, not POST)
 ```
 
-## Configuração de Webhook
+## Webhook Configuration
 
 ### GitLab
 
-1. Vá em **Settings → Webhooks** do projeto ou grupo
-2. URL: `https://dev-agent.<seu-tailnet>.ts.net/webhook`
-3. Secret token: mesmo valor de `GITLAB_SECRET` no `.env`
+1. Go to **Settings → Webhooks** (project or group level)
+2. URL: `https://dev-agent.<your-tailnet>.ts.net/webhook`
+3. Secret token: same value as `GITLAB_SECRET` in `.env`
 4. Trigger: **Issue events**
 
 ### GitHub
 
-1. Vá em **Settings → Webhooks** do repositório ou organização
-2. Payload URL: `https://dev-agent.<seu-tailnet>.ts.net/webhook`
+1. Go to **Settings → Webhooks** (repository or organization level)
+2. Payload URL: `https://dev-agent.<your-tailnet>.ts.net/webhook`
 3. Content type: `application/json`
-4. Secret: mesmo valor de `GITHUB_WEBHOOK_SECRET` no `.env`
-5. Events: selecione **Issues**
+4. Secret: same value as `GITHUB_WEBHOOK_SECRET` in `.env`
+5. Events: select **Issues**
 
-## Uso
+## Usage
 
-1. Crie ou encontre uma issue no GitLab/GitHub
-2. Adicione a label `ai-fix` à issue
-3. O agente automaticamente:
-   - Comenta na issue que iniciou o trabalho
-   - Clona o repositório
-   - Cria branch `fix/issue-{id}`
-   - Implementa a correção
-   - Roda testes
-   - Abre um MR/PR
-   - Comenta na issue com o resultado
+1. Create or find an issue on GitLab/GitHub
+2. Add the `ai-fix` label to the issue
+3. The agent automatically:
+   - Comments on the issue that work has started
+   - Clones the repository
+   - Creates branch `fix/issue-{id}`
+   - Runs the SDD pipeline (Requirements → Design → Tasks → Implementation → Finalize)
+   - Opens a MR/PR
+   - Comments on the issue with the result
 
-**Importante:** apenas usuários listados em `ALLOWED_USERS` podem acionar o agente.
+## Architecture
 
-## Monitoramento
+```
+dev-agent/
+├── automation/
+│   ├── server.js       # HTTP server, job queue, webhook handling
+│   ├── prompts.js      # SDD pipeline prompt builders (5 phases)
+│   ├── jobStore.js     # JSON-based job persistence
+│   └── Dockerfile      # Node.js 22+ Alpine container
+├── tailscale-config/   # Funnel configuration
+├── docker-compose.yml  # 2 services: automation + tailscale
+└── .env.example        # Environment variables template
+```
 
-Acompanhe os logs em tempo real:
+**Key design decisions:**
+- **Sequential job queue** — issues are processed one at a time to avoid resource contention
+- **Job persistence** — jobs are stored in `jobs.json` and survive container restarts
+- **HMAC-SHA256 validation** (GitHub) and token validation (GitLab) for webhook security
+- **30-minute timeout** per phase with retry mechanism
+
+## Monitoring
+
+Follow logs in real time:
 
 ```bash
 docker compose logs -f automation
 ```
 
-Os logs incluem:
-- Webhooks recebidos e validação
-- Início e fim de cada execução
-- Duração e exit code do Claude Code
-- Erros de API ou timeout
+Logs include:
+- Received webhooks and validation status
+- Start and end of each SDD phase
+- Duration and exit code of Claude Code
+- API errors or timeouts
 
-## Variáveis de Ambiente
+## Environment Variables
+
+| Variable | Description |
+|---|---|
+| `TS_AUTHKEY` | Tailscale authentication key |
+| `GITLAB_SECRET` | GitLab webhook secret |
+| `GITLAB_TOKEN` | GitLab API access token |
+| `GITHUB_WEBHOOK_SECRET` | GitHub webhook secret |
+| `GITHUB_TOKEN` | GitHub API access token |
+| `CLAUDE_CODE_OAUTH_TOKEN` | Claude Code OAuth token |
+| `ALLOWED_USERS` | Authorized users (comma-separated) |
+
+## Notes
+
+- The Claude Code OAuth token expires in ~1 year. Renew with `claude setup-token` and update `.env`.
+- Timeout is 30 minutes per SDD phase. Complex issues may require manual intervention.
+- Every generated MR/PR must be reviewed by a human before merging.
+
+---
+
+## Anexo — Documentação em Português (pt-BR)
+
+### O que é o Dev Agent?
+
+Agente autônomo que resolve issues do GitLab e GitHub usando Claude Code CLI. Quando um maintainer adiciona a label `ai-fix` a uma issue, o sistema clona o repositório, implementa a solução através de um pipeline de Desenvolvimento Orientado a Especificações (SDD), roda testes e abre um Merge Request/Pull Request automaticamente.
+
+### Como Funciona
+
+1. Um webhook é disparado quando a label `ai-fix` é adicionada a uma issue
+2. O servidor valida a requisição e enfileira o job
+3. O Claude Code executa 5 fases sequenciais do SDD:
+   - **Requisitos** — gera `REQUIREMENTS.md`
+   - **Design** — gera `DESIGN.md`
+   - **Tarefas** — gera `TASKS.md`
+   - **Implementação** — executa as tarefas com commits atômicos
+   - **Finalização** — faz push da branch e abre MR/PR
+4. Cada fase produz documentos de especificação que alimentam a próxima
+5. O agente comenta na issue com progresso e resultados
+
+### Pré-requisitos
+
+- Docker e Docker Compose
+- Conta Tailscale com Funnel habilitado
+- Token OAuth do Claude Code (`claude setup-token`)
+- Tokens de acesso: GitLab (PRIVATE-TOKEN) e/ou GitHub (PAT)
+
+### Início Rápido
+
+```bash
+# 1. Clone o repositório
+git clone <repo-url> dev-agent && cd dev-agent
+
+# 2. Configure o ambiente
+cp .env.example .env
+# Edite .env com seus tokens
+
+# 3. Suba os containers
+docker compose up -d
+
+# 4. Verifique os logs
+docker compose logs -f automation
+```
+
+### Configuração do Webhook
+
+**GitLab:** Settings → Webhooks → URL: `https://dev-agent.<seu-tailnet>.ts.net/webhook` → Trigger: Issue events
+
+**GitHub:** Settings → Webhooks → Payload URL: `https://dev-agent.<seu-tailnet>.ts.net/webhook` → Content type: `application/json` → Events: Issues
+
+### Uso
+
+1. Crie ou encontre uma issue no GitLab/GitHub
+2. Adicione a label `ai-fix`
+3. O agente automaticamente clona, implementa, testa e abre um MR/PR
+4. Revise o MR/PR antes de fazer merge
+
+### Variáveis de Ambiente
 
 | Variável | Descrição |
 |---|---|
@@ -144,9 +252,9 @@ Os logs incluem:
 | `CLAUDE_CODE_OAUTH_TOKEN` | Token OAuth do Claude Code |
 | `ALLOWED_USERS` | Usuários autorizados (separados por vírgula) |
 
-## Notas
+### Observações
 
 - O token OAuth do Claude Code expira em ~1 ano. Renove com `claude setup-token` e atualize o `.env`.
-- A fila é em memória — se o container reiniciar, issues pendentes são perdidas. Re-adicione a label para re-acionar.
-- Timeout de 30 minutos por execução. Issues complexas podem precisar de intervenção manual.
+- Timeout de 30 minutos por fase do SDD. Issues complexas podem precisar de intervenção manual.
 - Todo MR/PR gerado deve ser revisado por um humano antes do merge.
+- Jobs são persistidos em `jobs.json` e sobrevivem a reinícios do container.
