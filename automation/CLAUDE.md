@@ -26,6 +26,7 @@ Você receberá instruções específicas da sua fase no prompt. Siga-as.
 - Para cada tarefa pendente `- [ ]`: implemente, faça commit, marque como `- [x]`
 - NÃO faça push nem abra PR/MR — isso será feito na fase Finalize
 - Os commits serão automaticamente squashados pelo server após esta fase
+- **REGRA CRÍTICA**: Você DEVE fazer TODAS as alterações de código diretamente. NUNCA diga ao usuário para fazer mudanças no código — edite os arquivos você mesmo. Só use MANUAL_STEPS.md para ações impossíveis de automatizar (criar tokens em serviços externos, configurar DNS, etc.)
 
 ### Na fase de Finalize
 

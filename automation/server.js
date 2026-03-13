@@ -626,6 +626,17 @@ async function executeJob(job) {
     const { total, done } = countTasks(issueDir, job);
     const phases = PHASE_ORDER.map(p => `✅ ${PHASE_LABELS[p]}`).join(' → ');
 
+    // Montar blocos com conteúdo dos artefatos SDD
+    const sddPhases = ['requirements', 'design', 'tasks'];
+    const sddLabels = { requirements: '📋 Requisitos', design: '🏗️ Design', tasks: '📝 Tarefas' };
+    let sddBlock = '';
+    for (const phase of sddPhases) {
+      const content = readPhaseArtifact(issueDir, phase, job);
+      if (content) {
+        sddBlock += `\n\n<details>\n<summary>${sddLabels[phase]}</summary>\n\n${content}\n\n</details>`;
+      }
+    }
+
     // Verificar se há ações manuais pendentes
     const manualStepsPath = path.join(issueDir, specsDir(job), 'MANUAL_STEPS.md');
     let manualBlock = '';
@@ -636,7 +647,7 @@ async function executeJob(job) {
       // Sem ações manuais
     }
 
-    await commentOnIssue(job, `✅ **Concluído** — ${done}/${total} tarefas implementadas\n\n${phases}\n\n⏱️ ${duration}s${manualBlock}`);
+    await commentOnIssue(job, `✅ **Concluído** — ${done}/${total} tarefas implementadas\n\n${phases}\n\n⏱️ ${duration}s${sddBlock}${manualBlock}`);
 
   } finally {
     // Limpar diretório de trabalho após conclusão

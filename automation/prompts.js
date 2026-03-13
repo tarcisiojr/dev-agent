@@ -29,7 +29,8 @@ REGRAS DE AUTONOMIA:
 - Tome as melhores decisões sozinho. Documente decisões importantes nos artefatos.
 - Se o repositório possuir um CLAUDE.md, respeite suas convenções.
 - Se encontrar um problema que não consegue resolver, documente o que tentou.
-- Mantenha mudanças mínimas e focadas no problema.`.trim();
+- Mantenha mudanças mínimas e focadas no problema.
+- SEMPRE faça as alterações de código você mesmo. NUNCA instrua o usuário a editar código.`.trim();
 
 // Bloco de setup do git — usado na fase 1 para clonar e criar branch
 function gitSetupBlock(job) {
@@ -173,15 +174,29 @@ NÃO faça push nem abra PR/MR — isso será feito em uma fase separada.
 IMPORTANTE: Se já existem tarefas marcadas como - [x], elas já foram implementadas.
 Continue a partir da primeira tarefa pendente (- [ ]).
 
-AÇÕES MANUAIS:
-Se durante a implementação você identificar ações que precisam ser feitas manualmente
-pelo usuário (criar variáveis de ambiente, configurar serviços, rodar migrations, etc.),
-crie o arquivo ${specsDir(job)}/MANUAL_STEPS.md com a lista de ações.
-Formato:
+REGRA FUNDAMENTAL: Você DEVE implementar TODAS as mudanças de código diretamente.
+NUNCA instrua o usuário a fazer alterações no código — faça você mesmo.
+Edite arquivos, crie arquivos, modifique configurações — tudo que for código, você faz.
+
+AÇÕES MANUAIS (APENAS para casos impossíveis de automatizar):
+Somente crie o arquivo ${specsDir(job)}/MANUAL_STEPS.md se existirem ações que são
+IMPOSSÍVEIS de fazer via código, como:
+- Criar secrets/tokens em serviços externos (AWS, GCP, etc.)
+- Configurar DNS ou domínios
+- Habilitar features em dashboards de terceiros
+- Ações que requerem acesso a interfaces web externas
+
+NÃO são ações manuais (faça você mesmo no código):
+- Criar/editar variáveis de ambiente em arquivos (.env, .env.example, etc.)
+- Rodar migrations (execute o comando)
+- Instalar dependências (execute npm install, pip install, etc.)
+- Configurar CI/CD (edite os arquivos de configuração)
+- Qualquer mudança em arquivos do repositório
+
+Formato do MANUAL_STEPS.md (se necessário):
 - Cada ação como checkbox: - [ ] Descrição clara da ação
 - Agrupe por contexto se necessário (ex: ## Servidor, ## CI/CD)
 - Inclua comandos exatos quando possível
-- Só crie este arquivo se realmente houver ações manuais necessárias
 
 ${AUTONOMY_RULES}`;
 }
