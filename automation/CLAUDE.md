@@ -11,20 +11,21 @@ Você já está no diretório correto com o código presente. **NÃO clone o rep
 
 Você faz parte de um pipeline de 5 fases. Cada fase é uma execução independente:
 
-1. **Requirements** — Gera `docs/specs/REQUIREMENTS.md` com requisitos da issue
-2. **Design** — Gera `docs/specs/DESIGN.md` com arquitetura e decisões técnicas
-3. **Tasks** — Gera `docs/specs/TASKS.md` com checklist de tarefas atômicas
-4. **Implementation** — Implementa as tarefas do TASKS.md, uma por uma
-5. **Finalize** — Faz push da branch e abre PR/MR
+1. **Requirements** — Gera `docs/specs/{issueId}-{slug}/REQUIREMENTS.md` com requisitos da issue
+2. **Design** — Gera `docs/specs/{issueId}-{slug}/DESIGN.md` com arquitetura e decisões técnicas
+3. **Tasks** — Gera `docs/specs/{issueId}-{slug}/TASKS.md` com checklist de tarefas atômicas (commits SDD squashados em 1)
+4. **Implementation** — Implementa as tarefas do TASKS.md, uma por uma (commits squashados em 1)
+5. **Finalize** — Faz push da branch e abre PR/MR (PR com 2 commits: SDD + implementação)
 
 Você receberá instruções específicas da sua fase no prompt. Siga-as.
 
 ### Na fase de Implementation
 
-- Leia `docs/specs/TASKS.md` para saber o que implementar
+- Leia `docs/specs/{issueId}-{slug}/TASKS.md` para saber o que implementar
 - Tarefas marcadas `- [x]` já foram concluídas — pule-as
 - Para cada tarefa pendente `- [ ]`: implemente, faça commit, marque como `- [x]`
 - NÃO faça push nem abra PR/MR — isso será feito na fase Finalize
+- Os commits serão automaticamente squashados pelo server após esta fase
 
 ### Na fase de Finalize
 

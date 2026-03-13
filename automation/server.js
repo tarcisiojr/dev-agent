@@ -1,6 +1,6 @@
 const http = require('node:http');
 const crypto = require('node:crypto');
-const { spawn } = require('node:child_process');
+const { spawn, execSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
 const { loadJobs, upsertJob, generateJobId } = require('./jobStore');
@@ -16,6 +16,25 @@ const PORT = 9000;
 const TIMEOUT_MS = 30 * 60 * 1000; // 30 minutos
 const WORKSPACE_DIR = '/workspace';
 const ISSUES_DIR = path.join(WORKSPACE_DIR, 'issues');
+
+/** Converte título em slug ASCII lowercase, truncado em 50 chars */
+function slugify(title) {
+  return title
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // remove acentos
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')    // caracteres especiais → hífen
+    .replace(/-+/g, '-')            // hífens consecutivos → um só
+    .replace(/^-|-$/g, '')          // remove hífens nas pontas
+    .slice(0, 50)                   // trunca em 50 chars
+    .replace(/-$/, '');             // remove hífen final após truncar
+}
+
+/** Retorna o diretório de specs para o job: docs/specs/{issueId}-{slug}/ */
+function specsDir(job) {
+  const slug = slugify(job.title);
+  return `docs/specs/${job.issueId}-${slug}`;
+}
 
 /** Gera tag de log com contexto do job: [platform/repo#issue] */
 function jobTag(job) {
@@ -201,14 +220,18 @@ async function commentGitHub(job, message) {
 
 // --- Pipeline SDD ---
 
-/** Mapa de artefatos esperados por fase */
-const PHASE_ARTIFACTS = {
-  requirements: 'docs/specs/REQUIREMENTS.md',
-  design: 'docs/specs/DESIGN.md',
-  tasks: 'docs/specs/TASKS.md',
-  implementation: null, // verificado pelo exit code
-  finalize: null, // verificado pelo exit code (push + PR)
-};
+/** Retorna o path do artefato esperado para a fase, baseado no job */
+function getPhaseArtifact(phaseName, job) {
+  const dir = specsDir(job);
+  const artifacts = {
+    requirements: `${dir}/REQUIREMENTS.md`,
+    design: `${dir}/DESIGN.md`,
+    tasks: `${dir}/TASKS.md`,
+    implementation: null,
+    finalize: null,
+  };
+  return artifacts[phaseName] || null;
+}
 
 /** Mapa de prompt builders por fase */
 const PHASE_PROMPT_BUILDERS = {
@@ -232,15 +255,15 @@ const PHASE_COMMENTS = {
 const PHASE_ORDER = ['requirements', 'design', 'tasks', 'implementation', 'finalize'];
 
 /** Verifica se o artefato da fase existe no worktree */
-function verifyPhaseArtifact(worktreePath, phaseName) {
-  const artifact = PHASE_ARTIFACTS[phaseName];
+function verifyPhaseArtifact(worktreePath, phaseName, job) {
+  const artifact = getPhaseArtifact(phaseName, job);
   if (!artifact) return true; // implementation não tem artefato fixo
   return fs.existsSync(path.join(worktreePath, artifact));
 }
 
 /** Lê o conteúdo de um artefato da fase, se existir */
-function readPhaseArtifact(issueDir, phaseName) {
-  const artifact = PHASE_ARTIFACTS[phaseName];
+function readPhaseArtifact(issueDir, phaseName, job) {
+  const artifact = getPhaseArtifact(phaseName, job);
   if (!artifact) return null;
   const filePath = path.join(issueDir, artifact);
   try {
@@ -251,14 +274,73 @@ function readPhaseArtifact(issueDir, phaseName) {
 }
 
 /** Conta tasks totais e concluídas no TASKS.md */
-function countTasks(worktreePath) {
-  const tasksPath = path.join(worktreePath, 'docs', 'specs', 'TASKS.md');
+function countTasks(worktreePath, job) {
+  const tasksPath = path.join(worktreePath, specsDir(job), 'TASKS.md');
   if (!fs.existsSync(tasksPath)) return { total: 0, done: 0 };
 
   const content = fs.readFileSync(tasksPath, 'utf-8');
   const allTasks = (content.match(/- \[[ x]\]/g) || []);
   const doneTasks = (content.match(/- \[x\]/g) || []);
   return { total: allTasks.length, done: doneTasks.length };
+}
+
+/** Executa comando git no worktree e retorna stdout */
+function gitExec(worktreePath, cmd) {
+  return execSync(cmd, { cwd: worktreePath, encoding: 'utf-8' }).trim();
+}
+
+/**
+ * Squash dos commits SDD (fases 1-3) em um único commit.
+ * Chamado após a fase tasks completar com sucesso.
+ */
+function squashSddCommits(worktreePath, job) {
+  const commits = gitExec(worktreePath, 'git log --oneline origin/main..HEAD');
+  if (!commits) {
+    console.log(`[squash] ${jobTag(job)} nenhum commit SDD para squash`);
+    return;
+  }
+
+  const commitCount = commits.split('\n').length;
+  console.log(`[squash] ${jobTag(job)} squashando ${commitCount} commits SDD`);
+
+  gitExec(worktreePath, 'git reset --soft origin/main');
+  gitExec(worktreePath, 'git add .');
+  const msg = `docs(sdd): specs para issue #${job.issueId} - ${job.title}`;
+  gitExec(worktreePath, `git commit -m "${msg.replace(/"/g, '\\"')}"`);
+
+  console.log(`[squash] ${jobTag(job)} commits SDD squashados em 1`);
+}
+
+/**
+ * Squash dos commits de implementação (fase 4) em um único commit.
+ * Chamado após a fase implementation completar com sucesso.
+ */
+function squashImplCommits(worktreePath, job) {
+  // Identificar o hash do commit SDD (primeiro commit após origin/main)
+  // Pegar o primeiro commit após origin/main (commit SDD squashado)
+  const allHashes = gitExec(worktreePath, 'git log --format=%H --reverse origin/main..HEAD');
+  const sddHash = allHashes.split('\n')[0];
+  if (!sddHash) {
+    console.log(`[squash] ${jobTag(job)} nenhum commit SDD encontrado para referência`);
+    return;
+  }
+
+  // Verificar se há commits de implementação após o SDD
+  const implCommits = gitExec(worktreePath, `git log --oneline ${sddHash}..HEAD`);
+  if (!implCommits) {
+    console.log(`[squash] ${jobTag(job)} nenhum commit de implementação para squash`);
+    return;
+  }
+
+  const commitCount = implCommits.split('\n').length;
+  console.log(`[squash] ${jobTag(job)} squashando ${commitCount} commits de implementação`);
+
+  gitExec(worktreePath, `git reset --soft ${sddHash}`);
+  gitExec(worktreePath, 'git add .');
+  const msg = `fix: ${job.title} #${job.issueId}`;
+  gitExec(worktreePath, `git commit -m "${msg.replace(/"/g, '\\"')}"`);
+
+  console.log(`[squash] ${jobTag(job)} commits de implementação squashados em 1`);
 }
 
 /**
@@ -328,7 +410,7 @@ async function runPhase(job, phaseName, worktreePath) {
   }
 
   // Verificar se artefato foi criado
-  if (result.code === 0 && verifyPhaseArtifact(worktreePath, phaseName)) {
+  if (result.code === 0 && verifyPhaseArtifact(worktreePath, phaseName, job)) {
     job.phases[phaseName] = 'done';
     upsertJob(job);
     return { success: true, result };
@@ -387,19 +469,23 @@ async function executeJob(job) {
       }
 
       // Fase concluída — comentar progresso com conteúdo do artefato
-      const artifactContent = readPhaseArtifact(issueDir, phaseName);
+      const artifactContent = readPhaseArtifact(issueDir, phaseName, job);
       const contentBlock = artifactContent
         ? `\n\n<details>\n<summary>📄 Ver documento gerado</summary>\n\n${artifactContent}\n\n</details>`
         : '';
 
       if (phaseName === 'tasks') {
-        const { total } = countTasks(issueDir);
+        const { total } = countTasks(issueDir, job);
         job.totalTasks = total;
         upsertJob(job);
         await commentOnIssue(job, `📝 **Fase 3/5** — ${total} tarefas identificadas${contentBlock}`);
+        // Squash dos commits SDD (fases 1-3) em um único commit
+        squashSddCommits(issueDir, job);
       } else if (phaseName === 'implementation') {
-        const { total, done } = countTasks(issueDir);
+        const { total, done } = countTasks(issueDir, job);
         await commentOnIssue(job, `⚙️ **Fase 4/5** — Implementação concluída — ${done}/${total} tarefas`);
+        // Squash dos commits de implementação em um único commit
+        squashImplCommits(issueDir, job);
       } else if (phaseName === 'finalize') {
         await commentOnIssue(job, `🚀 **Fase 5/5** — Push e PR/MR criados`);
       } else if (PHASE_COMMENTS[phaseName]) {

@@ -3,6 +3,25 @@
  * Cada fase tem um prompt especializado que guia o Claude Code.
  */
 
+/** Converte título em slug ASCII lowercase, truncado em 50 chars */
+function slugify(title) {
+  return title
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 50)
+    .replace(/-$/, '');
+}
+
+/** Retorna o diretório de specs para o job */
+function specsDir(job) {
+  const slug = slugify(job.title);
+  return `docs/specs/${job.issueId}-${slug}`;
+}
+
 // Bloco de autonomia incluído em todos os prompts
 const AUTONOMY_RULES = `
 REGRAS DE AUTONOMIA:
@@ -56,8 +75,8 @@ OBJETIVO: Analise a issue e o código existente, e gere um documento de requisit
 INSTRUÇÕES:
 1. Faça o setup do repositório conforme as instruções acima
 2. Leia o código relevante do repositório para entender o contexto
-3. Crie o diretório docs/specs/ se não existir: mkdir -p docs/specs
-4. Gere o arquivo docs/specs/REQUIREMENTS.md com:
+3. Crie o diretório ${specsDir(job)}/ se não existir: mkdir -p ${specsDir(job)}
+4. Gere o arquivo ${specsDir(job)}/REQUIREMENTS.md com:
    - Resumo do problema
    - Requisitos funcionais (o que o sistema deve fazer)
    - Requisitos não-funcionais (performance, segurança, etc., se aplicável)
@@ -84,9 +103,9 @@ OBJETIVO: Com base nos requisitos já definidos, crie um documento de design té
 
 INSTRUÇÕES:
 1. Verifique que o repositório está correto e na branch certa
-2. Leia docs/specs/REQUIREMENTS.md para entender os requisitos
+2. Leia ${specsDir(job)}/REQUIREMENTS.md para entender os requisitos
 3. Analise o código existente para entender arquitetura e padrões em uso
-4. Gere o arquivo docs/specs/DESIGN.md com:
+4. Gere o arquivo ${specsDir(job)}/DESIGN.md com:
    - Contexto e estado atual do código
    - Abordagem técnica escolhida e justificativa
    - Componentes/arquivos que serão criados ou modificados
@@ -114,8 +133,8 @@ OBJETIVO: Com base nos requisitos e design, quebre a implementação em tarefas 
 
 INSTRUÇÕES:
 1. Verifique que o repositório está correto e na branch certa
-2. Leia docs/specs/REQUIREMENTS.md e docs/specs/DESIGN.md
-3. Gere o arquivo docs/specs/TASKS.md com:
+2. Leia ${specsDir(job)}/REQUIREMENTS.md e ${specsDir(job)}/DESIGN.md
+3. Gere o arquivo ${specsDir(job)}/TASKS.md com:
    - Tarefas agrupadas por área (## 1. Nome do Grupo, ## 2. ...)
    - Cada tarefa como checkbox: - [ ] N.N Descrição da tarefa
    - Tarefas devem ser atômicas (completáveis em uma sessão)
@@ -142,11 +161,11 @@ OBJETIVO: Implemente as tarefas definidas no TASKS.md, uma por uma.
 
 INSTRUÇÕES:
 1. Verifique que o repositório está correto e na branch certa
-2. Leia docs/specs/REQUIREMENTS.md, docs/specs/DESIGN.md e docs/specs/TASKS.md
+2. Leia ${specsDir(job)}/REQUIREMENTS.md, ${specsDir(job)}/DESIGN.md e ${specsDir(job)}/TASKS.md
 3. Para cada tarefa pendente (marcada com - [ ]):
    a. Implemente a mudança no código
    b. Faça commit com mensagem descritiva referenciando a issue
-   c. Atualize o TASKS.md marcando a tarefa como concluída: - [x]
+   c. Atualize o ${specsDir(job)}/TASKS.md marcando a tarefa como concluída: - [x]
 4. Rode os testes existentes para garantir que nada quebrou
 
 NÃO faça push nem abra PR/MR — isso será feito em uma fase separada.
