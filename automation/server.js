@@ -39,7 +39,7 @@ function specsDir(job) {
 
 /** Gera tag de log com contexto do job: [platform/repo#issue] */
 function jobTag(job) {
-  const id = job.type === 'review' ? `PR#${job.prNumber}` : `#${job.issueId}`;
+  const id = job.type === 'review' ? ` PR#${job.prNumber}` : `#${job.issueId}`;
   return `[${job.platform}/${job.repoIdentifier}${id}]`;
 }
 
@@ -728,8 +728,8 @@ async function postGitHubReview(job, reviewData) {
       'User-Agent': 'dev-agent',
     },
     body: JSON.stringify({
-      event: reviewData.verdict,
-      body: `🤖 **Code Review Automatizado**\n\n${reviewData.summary}`,
+      event: 'COMMENT',
+      body: `🤖 **Code Review Automatizado** — ${reviewData.verdict === 'APPROVE' ? '✅ Aprovado' : '🔄 Alterações solicitadas'}\n\n${reviewData.summary}`,
       comments,
     }),
   });
