@@ -4,7 +4,8 @@
   "description": "Agente autônomo que resolve issues via Claude Code CLI",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test automation/*.test.js"
   },
   "engines": {
     "node": ">=22"

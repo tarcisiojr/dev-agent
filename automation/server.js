@@ -400,7 +400,11 @@ async function blockJob(job, field, detectionResult, commentFn) {
     'Se você acredita que este é um falso positivo, entre em contato com um administrador.',
   ].join('\n');
 
-  await commentFn(job, message);
+  try {
+    await commentFn(job, message);
+  } catch (err) {
+    console.error(`[security] ${jobTag(job)} Falha ao postar comentário de bloqueio:`, err.message);
+  }
 }
 
 // --- Pipeline SDD ---
@@ -1183,9 +1187,13 @@ function recoverJobs() {
 }
 
 // Recuperar jobs antes de iniciar o servidor
-recoverJobs();
+if (require.main === module) {
+  recoverJobs();
 
-server.listen(PORT, () => {
-  console.log(`[server] Dev Agent rodando na porta ${PORT}`);
-  console.log(`[server] Usuários autorizados: ${process.env.ALLOWED_USERS || '(nenhum)'}`);
-});
+  server.listen(PORT, () => {
+    console.log(`[server] Dev Agent rodando na porta ${PORT}`);
+    console.log(`[server] Usuários autorizados: ${process.env.ALLOWED_USERS || '(nenhum)'}`);
+  });
+}
+
+module.exports = { blockJob };
