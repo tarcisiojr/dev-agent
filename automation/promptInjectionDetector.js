@@ -56,7 +56,7 @@ const INJECTION_RULES = [
  * @returns {string}
  */
 function normalizeContent(content) {
-  if (!content) return '';
+  if (!content || typeof content !== 'string') return '';
   // Remove zero-width characters (U+200B, U+200C, U+200D, U+FEFF, etc.)
   return content
     .replace(/[\u200B-\u200D\uFEFF\u00AD]/g, '')
@@ -70,7 +70,7 @@ function normalizeContent(content) {
  * @returns {{ detected: boolean, rule: string|null, match: string|null }}
  */
 function detectPromptInjection(content) {
-  if (!content) {
+  if (!content || typeof content !== 'string') {
     return { detected: false, rule: null, match: null };
   }
 
