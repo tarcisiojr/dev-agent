@@ -223,10 +223,78 @@ Se o ${mrOrPr} já existir, apenas confirme e prossiga.
 ${AUTONOMY_RULES}`;
 }
 
+function buildCodeReviewPrompt(job, diff, existingComments) {
+  const commentsBlock = existingComments
+    ? `\nCOMENTÁRIOS EXISTENTES NO PR (NÃO repita problemas já discutidos):\n${existingComments}\n`
+    : '\nNenhum comentário de review existente neste PR.\n';
+
+  return `Você é um agente autônomo realizando code review de um Pull Request.
+
+Plataforma: ${job.platform}
+Repositório: ${job.repoUrl}
+PR #${job.prNumber}: ${job.title}
+Branch: ${job.sourceBranch} → ${job.targetBranch}
+
+${commentsBlock}
+
+DIFF DO PR:
+\`\`\`diff
+${diff}
+\`\`\`
+
+OBJETIVO: Analise o diff acima e produza um review detalhado com inline comments.
+
+INSTRUÇÕES DE ANÁLISE:
+1. Para cada arquivo modificado no diff, analise:
+   - Bugs e problemas lógicos
+   - Vulnerabilidades de segurança (OWASP top 10)
+   - Breaking changes: se uma assinatura de função/método/API mudou, use Glob e Grep para buscar TODOS os chamadores no repositório e verifique se serão afetados
+   - Problemas de performance (N+1, loops desnecessários, etc.)
+   - Qualidade de código (duplicação, naming, legibilidade)
+
+2. Para análise de impacto em contratos alterados:
+   - Se uma função teve sua assinatura alterada, busque chamadores com: grep -rn "nomeDaFuncao" no repositório
+   - Se uma interface/type mudou, busque implementações e usos
+   - Reporte TODOS os arquivos que serão afetados pela mudança
+
+3. NÃO repita problemas que já foram discutidos nos comentários existentes acima.
+
+4. Seja objetivo e específico. Cada comment deve apontar o problema exato e sugerir como corrigir.
+
+FORMATO DE OUTPUT OBRIGATÓRIO:
+Retorne APENAS um JSON válido, sem texto antes ou depois. O JSON deve seguir este formato:
+
+{
+  "verdict": "APPROVE" | "REQUEST_CHANGES",
+  "summary": "Resumo geral do review em 1-3 frases",
+  "comments": [
+    {
+      "path": "caminho/do/arquivo.js",
+      "line": 42,
+      "severity": "critical" | "high" | "medium" | "low",
+      "category": "bug" | "security" | "breaking_change" | "performance" | "quality",
+      "body": "Descrição detalhada do problema e sugestão de correção"
+    }
+  ]
+}
+
+REGRAS DO VEREDITO:
+- Use "REQUEST_CHANGES" se houver qualquer comment com severity "critical" ou "high"
+- Use "APPROVE" se não houver problemas ou apenas comments "medium"/"low"
+
+REGRAS DO JSON:
+- "line" deve ser o número da linha no arquivo MODIFICADO (new file), não a posição no diff
+- Se não encontrar problemas, retorne comments como array vazio
+- NUNCA inclua texto fora do JSON
+
+${AUTONOMY_RULES}`;
+}
+
 module.exports = {
   buildRequirementsPrompt,
   buildDesignPrompt,
   buildTasksPrompt,
   buildImplementationPrompt,
   buildFinalizePrompt,
+  buildCodeReviewPrompt,
 };

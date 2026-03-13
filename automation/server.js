@@ -10,6 +10,7 @@ const {
   buildTasksPrompt,
   buildImplementationPrompt,
   buildFinalizePrompt,
+  buildCodeReviewPrompt,
 } = require('./prompts');
 
 const PORT = 9000;
@@ -38,7 +39,8 @@ function specsDir(job) {
 
 /** Gera tag de log com contexto do job: [platform/repo#issue] */
 function jobTag(job) {
-  return `[${job.platform}/${job.repoIdentifier}#${job.issueId}]`;
+  const id = job.type === 'review' ? `PR#${job.prNumber}` : `#${job.issueId}`;
+  return `[${job.platform}/${job.repoIdentifier}${id}]`;
 }
 
 // --- Fila sequencial ---
@@ -49,23 +51,29 @@ let processing = false;
 function enqueue(job) {
   // Gerar ID e persistir com status queued
   if (!job.id) {
-    job.id = generateJobId(job.platform, job.repoIdentifier, job.issueId);
+    const idSuffix = job.type === 'review' ? `pr-${job.prNumber}` : job.issueId;
+    job.id = generateJobId(job.platform, job.repoIdentifier, idSuffix);
   }
   if (!job.status) {
     job.status = 'queued';
-    job.phase = null;
-    job.currentTask = 0;
-    job.totalTasks = 0;
     job.retryCount = 0;
     job.maxRetries = 3;
     job.createdAt = job.createdAt || new Date().toISOString();
-    job.phases = {
-      requirements: 'pending',
-      design: 'pending',
-      tasks: 'pending',
-      implementation: 'pending',
-      finalize: 'pending',
-    };
+
+    if (job.type === 'review') {
+      job.phase = 'review';
+    } else {
+      job.phase = null;
+      job.currentTask = 0;
+      job.totalTasks = 0;
+      job.phases = {
+        requirements: 'pending',
+        design: 'pending',
+        tasks: 'pending',
+        implementation: 'pending',
+        finalize: 'pending',
+      };
+    }
   }
   upsertJob(job);
 
@@ -119,6 +127,12 @@ function isIssueEvent(platform, headers, payload) {
   return false;
 }
 
+function isPullRequestEvent(platform, headers, payload) {
+  if (platform === 'gitlab') return payload.object_kind === 'merge_request';
+  if (platform === 'github') return headers['x-github-event'] === 'pull_request';
+  return false;
+}
+
 function isLabelAdded(platform, payload) {
   if (platform === 'gitlab') {
     const current = (payload.changes?.labels?.current || []).map(l => l.title);
@@ -128,6 +142,20 @@ function isLabelAdded(platform, payload) {
 
   if (platform === 'github') {
     return payload.action === 'labeled' && payload.label?.name === 'ai-fix';
+  }
+
+  return false;
+}
+
+function isReviewLabelAdded(platform, payload) {
+  if (platform === 'gitlab') {
+    const current = (payload.changes?.labels?.current || []).map(l => l.title);
+    const previous = (payload.changes?.labels?.previous || []).map(l => l.title);
+    return current.includes('ai-review') && !previous.includes('ai-review');
+  }
+
+  if (platform === 'github') {
+    return payload.action === 'labeled' && payload.label?.name === 'ai-review';
   }
 
   return false;
@@ -162,6 +190,36 @@ function extractIssueData(platform, payload) {
     issueId: payload.issue.number,
     title: payload.issue.title,
     description: payload.issue.body || '',
+    repoUrl: payload.repository.clone_url,
+    projectId: null,
+    repoIdentifier: payload.repository.full_name,
+    user: payload.sender?.login,
+  };
+}
+
+function extractPullRequestData(platform, payload) {
+  if (platform === 'gitlab') {
+    return {
+      type: 'review',
+      platform,
+      prNumber: payload.object_attributes.iid,
+      title: payload.object_attributes.title,
+      sourceBranch: payload.object_attributes.source_branch,
+      targetBranch: payload.object_attributes.target_branch,
+      repoUrl: payload.project.git_http_url,
+      projectId: payload.project.id,
+      repoIdentifier: payload.project.path_with_namespace,
+      user: payload.user?.username,
+    };
+  }
+
+  return {
+    type: 'review',
+    platform,
+    prNumber: payload.pull_request.number,
+    title: payload.pull_request.title,
+    sourceBranch: payload.pull_request.head.ref,
+    targetBranch: payload.pull_request.base.ref,
     repoUrl: payload.repository.clone_url,
     projectId: null,
     repoIdentifier: payload.repository.full_name,
@@ -216,6 +274,80 @@ async function commentGitHub(job, message) {
   if (!res.ok) {
     throw new Error(`GitHub API retornou ${res.status}: ${await res.text()}`);
   }
+}
+
+// --- Code Review ---
+
+const MAX_DIFF_SIZE = 500 * 1024; // 500KB
+
+/** Clona o repo, faz checkout na branch do PR e retorna o diff contra a branch base */
+async function fetchPRDiff(job, worktreePath) {
+  execSync(`git clone ${job.repoUrl} .`, { cwd: worktreePath, stdio: 'pipe' });
+  execSync(`git checkout ${job.sourceBranch}`, { cwd: worktreePath, stdio: 'pipe' });
+  execSync(`git fetch origin ${job.targetBranch}`, { cwd: worktreePath, stdio: 'pipe' });
+
+  let diff = execSync(
+    `git diff origin/${job.targetBranch}...HEAD`,
+    { cwd: worktreePath, encoding: 'utf-8', maxBuffer: 10 * 1024 * 1024 }
+  );
+
+  let truncated = false;
+  if (Buffer.byteLength(diff, 'utf-8') > MAX_DIFF_SIZE) {
+    diff = diff.slice(0, MAX_DIFF_SIZE);
+    truncated = true;
+  }
+
+  return { diff, truncated };
+}
+
+/** Busca comentários de review existentes no PR via API da plataforma */
+async function fetchExistingComments(job) {
+  try {
+    if (job.platform === 'github') {
+      const url = `https://api.github.com/repos/${job.repoIdentifier}/pulls/${job.prNumber}/comments`;
+      const res = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          'User-Agent': 'dev-agent',
+        },
+      });
+      if (!res.ok) return '';
+      const comments = await res.json();
+      if (comments.length === 0) return '';
+      return comments.map(c => `[${c.user.login}] ${c.path}:${c.line || c.original_line}: ${c.body}`).join('\n');
+    }
+
+    if (job.platform === 'gitlab') {
+      const url = `https://gitlab.com/api/v4/projects/${job.projectId}/merge_requests/${job.prNumber}/discussions`;
+      const res = await fetch(url, {
+        headers: { 'PRIVATE-TOKEN': process.env.GITLAB_TOKEN },
+      });
+      if (!res.ok) return '';
+      const discussions = await res.json();
+      if (discussions.length === 0) return '';
+      const lines = [];
+      for (const d of discussions) {
+        for (const note of (d.notes || [])) {
+          const pos = note.position;
+          const file = pos?.new_path || '';
+          const line = pos?.new_line || '';
+          lines.push(`[${note.author.username}] ${file}:${line}: ${note.body}`);
+        }
+      }
+      return lines.join('\n');
+    }
+  } catch (err) {
+    console.error(`[review] ${jobTag(job)} Falha ao buscar comentários existentes:`, err.message);
+  }
+  return '';
+}
+
+/** Retorna a lista de arquivos modificados no diff */
+function fetchDiffFileList(job, worktreePath) {
+  return execSync(
+    `git diff --name-only origin/${job.targetBranch}...HEAD`,
+    { cwd: worktreePath, encoding: 'utf-8' }
+  ).trim().split('\n').filter(Boolean);
 }
 
 // --- Pipeline SDD ---
@@ -347,13 +479,13 @@ function squashImplCommits(worktreePath, job) {
  * Spawna o Claude Code com um prompt e retorna o resultado.
  * Reutilizado por todas as fases.
  */
-function spawnClaude(prompt, cwd) {
+function spawnClaude(prompt, cwd, { allowedTools = 'Bash,Read,Write,Edit,Glob,Grep', maxTurns = '50' } = {}) {
   return new Promise((resolve) => {
     const proc = spawn('claude', [
       '-p', '-',
-      '--allowedTools', 'Bash,Read,Write,Edit,Glob,Grep',
+      '--allowedTools', allowedTools,
       '--dangerously-skip-permissions',
-      '--max-turns', '50',
+      '--max-turns', maxTurns,
     ], {
       cwd,
       env: {
@@ -422,6 +554,11 @@ async function runPhase(job, phaseName, worktreePath) {
 // --- Execução do job ---
 
 async function executeJob(job) {
+  // Despachar para review se for job de review
+  if (job.type === 'review') {
+    return executeReviewJob(job);
+  }
+
   const startTime = Date.now();
   console.log(`[início] ${jobTag(job)} "${job.title}" — usuário: ${job.user}`);
 
@@ -508,6 +645,264 @@ async function executeJob(job) {
   }
 }
 
+// --- Comentários no PR ---
+
+async function commentOnPR(job, message) {
+  try {
+    if (job.platform === 'gitlab') {
+      const url = `https://gitlab.com/api/v4/projects/${job.projectId}/merge_requests/${job.prNumber}/notes`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'PRIVATE-TOKEN': process.env.GITLAB_TOKEN,
+        },
+        body: JSON.stringify({ body: message }),
+      });
+      if (!res.ok) throw new Error(`GitLab API retornou ${res.status}: ${await res.text()}`);
+    } else {
+      // GitHub usa o endpoint de issues para comentários gerais em PRs
+      const url = `https://api.github.com/repos/${job.repoIdentifier}/issues/${job.prNumber}/comments`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          'User-Agent': 'dev-agent',
+        },
+        body: JSON.stringify({ body: message }),
+      });
+      if (!res.ok) throw new Error(`GitHub API retornou ${res.status}: ${await res.text()}`);
+    }
+  } catch (err) {
+    console.error(`[erro] ${jobTag(job)} Falha ao comentar no PR:`, err.message);
+  }
+}
+
+// --- Posting de review comments ---
+
+const SEVERITY_EMOJI = {
+  critical: '🔴',
+  high: '🟠',
+  medium: '🟡',
+  low: '🔵',
+};
+
+function formatCommentBody(comment) {
+  const emoji = SEVERITY_EMOJI[comment.severity] || '⚪';
+  return `${emoji} **[Severidade: ${comment.severity}]** **${comment.category}**\n\n${comment.body}`;
+}
+
+/** Extrai e valida o JSON de review do stdout do Claude */
+function parseReviewOutput(stdout) {
+  // Tentar extrair JSON do output (pode conter texto antes/depois)
+  const jsonMatch = stdout.match(/\{[\s\S]*"verdict"[\s\S]*"comments"[\s\S]*\}/);
+  if (!jsonMatch) return null;
+
+  try {
+    const data = JSON.parse(jsonMatch[0]);
+    // Validar campos obrigatórios
+    if (!data.verdict || !data.summary || !Array.isArray(data.comments)) return null;
+    if (!['APPROVE', 'REQUEST_CHANGES'].includes(data.verdict)) return null;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+/** Posta review batch no GitHub (uma request com todos os comments) */
+async function postGitHubReview(job, reviewData) {
+  const url = `https://api.github.com/repos/${job.repoIdentifier}/pulls/${job.prNumber}/reviews`;
+
+  const comments = reviewData.comments.map(c => ({
+    path: c.path,
+    line: c.line,
+    body: formatCommentBody(c),
+  }));
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      'User-Agent': 'dev-agent',
+    },
+    body: JSON.stringify({
+      event: reviewData.verdict,
+      body: `🤖 **Code Review Automatizado**\n\n${reviewData.summary}`,
+      comments,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`GitHub Review API retornou ${res.status}: ${await res.text()}`);
+  }
+}
+
+/** Posta review no GitLab (uma request por comment + nota geral) */
+async function postGitLabReview(job, reviewData) {
+  // Obter SHAs necessários para posicionar comments
+  const repoDir = path.join(ISSUES_DIR, job.id);
+  const headSha = gitExec(repoDir, 'git rev-parse HEAD');
+  const baseSha = gitExec(repoDir, `git merge-base origin/${job.targetBranch} HEAD`);
+
+  // Postar cada comment como discussion inline
+  for (const comment of reviewData.comments) {
+    try {
+      const url = `https://gitlab.com/api/v4/projects/${job.projectId}/merge_requests/${job.prNumber}/discussions`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'PRIVATE-TOKEN': process.env.GITLAB_TOKEN,
+        },
+        body: JSON.stringify({
+          body: formatCommentBody(comment),
+          position: {
+            position_type: 'text',
+            base_sha: baseSha,
+            head_sha: headSha,
+            start_sha: baseSha,
+            new_path: comment.path,
+            new_line: comment.line,
+          },
+        }),
+      });
+      if (!res.ok) {
+        console.error(`[review] ${jobTag(job)} Falha ao postar comment em ${comment.path}:${comment.line}: ${res.status}`);
+      }
+    } catch (err) {
+      console.error(`[review] ${jobTag(job)} Erro ao postar comment:`, err.message);
+    }
+  }
+
+  // Postar nota geral com summary e veredito
+  const verdictText = reviewData.verdict === 'APPROVE' ? '✅ Aprovado' : '🔄 Alterações solicitadas';
+  await commentOnPR(job, `🤖 **Code Review Automatizado** — ${verdictText}\n\n${reviewData.summary}`);
+}
+
+/** Despacha postagem de review para a plataforma correta */
+async function postReviewComments(job, reviewData) {
+  if (job.platform === 'github') {
+    await postGitHubReview(job, reviewData);
+  } else {
+    await postGitLabReview(job, reviewData);
+  }
+}
+
+// --- Execução do review ---
+
+async function executeReviewJob(job) {
+  const startTime = Date.now();
+  console.log(`[review] ${jobTag(job)} "${job.title}" — usuário: ${job.user}`);
+
+  await commentOnPR(job, '🤖 **Claude Code** está revisando este PR...');
+
+  const workDir = path.join(ISSUES_DIR, job.id);
+  fs.mkdirSync(workDir, { recursive: true });
+
+  try {
+    job.status = 'running';
+    upsertJob(job);
+
+    // Clonar e preparar repositório
+    console.log(`[review] ${jobTag(job)} clonando repositório e preparando diff`);
+    const { diff, truncated } = await fetchPRDiff(job, workDir);
+
+    if (truncated) {
+      await commentOnPR(job, '⚠️ O diff deste PR é muito grande. O review será parcial (primeiros 500KB do diff).');
+    }
+
+    // Buscar comentários existentes
+    const existingComments = await fetchExistingComments(job);
+    console.log(`[review] ${jobTag(job)} comentários existentes: ${existingComments ? 'sim' : 'nenhum'}`);
+
+    // Spawnar Claude para análise
+    const prompt = buildCodeReviewPrompt(job, diff, existingComments);
+    const result = await spawnClaude(prompt, workDir, {
+      allowedTools: 'Bash,Read,Glob,Grep',
+      maxTurns: '30',
+    });
+
+    if (result.code !== 0) {
+      console.log(`[review] ${jobTag(job)} Claude falhou — exit code: ${result.code}`);
+      console.log(`[stderr] ${jobTag(job)}:\n${result.stderr}`);
+
+      job.retryCount = (job.retryCount || 0) + 1;
+      if (job.retryCount < job.maxRetries) {
+        job.status = 'queued';
+        upsertJob(job);
+        console.log(`[retry] ${jobTag(job)} retry ${job.retryCount}/${job.maxRetries}`);
+        enqueue(job);
+        return;
+      }
+
+      job.status = 'needs_help';
+      upsertJob(job);
+      await commentOnPR(job, '🆘 Não consegui completar o review. Preciso de ajuda humana.');
+      return;
+    }
+
+    // Parsear resultado
+    const reviewData = parseReviewOutput(result.stdout);
+
+    if (!reviewData) {
+      console.log(`[review] ${jobTag(job)} JSON inválido no output do Claude`);
+      console.log(`[stdout] ${jobTag(job)}:\n${result.stdout.slice(-2000)}`);
+
+      job.retryCount = (job.retryCount || 0) + 1;
+      if (job.retryCount < job.maxRetries) {
+        job.status = 'queued';
+        upsertJob(job);
+        console.log(`[retry] ${jobTag(job)} JSON inválido, retry ${job.retryCount}/${job.maxRetries}`);
+        enqueue(job);
+        return;
+      }
+
+      job.status = 'needs_help';
+      upsertJob(job);
+      await commentOnPR(job, '🆘 Não consegui completar o review após várias tentativas. Preciso de ajuda humana.');
+      return;
+    }
+
+    // Postar review comments
+    console.log(`[review] ${jobTag(job)} postando review: ${reviewData.verdict}, ${reviewData.comments.length} comments`);
+    await postReviewComments(job, reviewData);
+
+    // Resumo final
+    const duration = ((Date.now() - startTime) / 1000).toFixed(1);
+    const severityCounts = {};
+    for (const c of reviewData.comments) {
+      severityCounts[c.severity] = (severityCounts[c.severity] || 0) + 1;
+    }
+    const countsText = Object.entries(severityCounts)
+      .map(([sev, count]) => `${SEVERITY_EMOJI[sev] || '⚪'} ${sev}: ${count}`)
+      .join(' | ');
+
+    const verdictEmoji = reviewData.verdict === 'APPROVE' ? '✅' : '🔄';
+    const summaryMsg = [
+      `${verdictEmoji} **Review concluído** — ${reviewData.comments.length} comentário(s)`,
+      countsText ? `\n${countsText}` : '',
+      `\n⏱️ ${duration}s`,
+    ].join('');
+
+    // No GitHub o veredito já foi postado via review API, só posta resumo no GitLab
+    if (job.platform === 'gitlab') {
+      // Summary já foi postado em postGitLabReview
+    } else {
+      await commentOnPR(job, summaryMsg);
+    }
+
+    job.status = 'done';
+    upsertJob(job);
+    console.log(`[review] ${jobTag(job)} review concluído — ${reviewData.verdict} — ${duration}s`);
+
+  } finally {
+    console.log(`[limpeza] ${jobTag(job)} removendo diretório de trabalho`);
+    fs.rmSync(workDir, { recursive: true, force: true });
+  }
+}
+
 // --- Servidor HTTP ---
 
 const server = http.createServer((req, res) => {
@@ -558,10 +953,28 @@ function handleWebhook(headers, body, res) {
 
   const payload = JSON.parse(body);
 
+  // Verificar se é evento de PR/MR com label ai-review
+  if (isPullRequestEvent(platform, headers, payload) && isReviewLabelAdded(platform, payload)) {
+    if (!isUserAuthorized(platform, payload)) {
+      const user = platform === 'gitlab' ? payload.user?.username : payload.sender?.login;
+      console.log(`[webhook] Usuário não autorizado para review: ${user}`);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'ignored', reason: 'user not authorized' }));
+      return;
+    }
+
+    const job = extractPullRequestData(platform, payload);
+    enqueue(job);
+
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ status: 'queued' }));
+    return;
+  }
+
   // Filtrar por evento de issue
   if (!isIssueEvent(platform, headers, payload)) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ status: 'ignored', reason: 'not an issue event' }));
+    res.end(JSON.stringify({ status: 'ignored', reason: 'not an issue or PR event' }));
     return;
   }
 
@@ -602,8 +1015,8 @@ function recoverJobs() {
       console.log(`[recovery] Job ${job.id} estava running — re-enfileirando`);
       job.status = 'queued';
       job.retryCount = (job.retryCount || 0) + 1;
-      // Marcar fase atual como pending para re-executar
-      if (job.phase && job.phases[job.phase] === 'running') {
+      // Marcar fase atual como pending para re-executar (só para jobs SDD)
+      if (job.phases && job.phase && job.phases[job.phase] === 'running') {
         job.phases[job.phase] = 'pending';
       }
       upsertJob(job);
