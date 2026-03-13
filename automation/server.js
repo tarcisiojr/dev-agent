@@ -280,6 +280,19 @@ async function commentGitHub(job, message) {
 // --- Code Review ---
 
 const MAX_DIFF_SIZE = 500 * 1024; // 500KB
+const IGNORED_REVIEW_EXTENSIONS = ['.md'];
+
+/** Divide o diff em blocos por arquivo e descarta os que terminam com extensão ignorada */
+function filterDiff(diff, ignoredExts) {
+  if (!diff) return diff;
+  const blocks = diff.split(/(?=^diff --git )/m);
+  return blocks.filter(block => {
+    const match = block.match(/^diff --git "?a\/(.+?)"? "?b\//m);
+    if (!match) return true;
+    const filePath = match[1];
+    return !ignoredExts.some(ext => filePath.endsWith(ext));
+  }).join('');
+}
 
 /** Clona o repo, faz checkout na branch do PR e retorna o diff contra a branch base */
 async function fetchPRDiff(job, worktreePath) {
@@ -291,6 +304,8 @@ async function fetchPRDiff(job, worktreePath) {
     `git diff origin/${job.targetBranch}...HEAD`,
     { cwd: worktreePath, encoding: 'utf-8', maxBuffer: 10 * 1024 * 1024 }
   );
+
+  diff = filterDiff(diff, IGNORED_REVIEW_EXTENSIONS);
 
   let truncated = false;
   if (Buffer.byteLength(diff, 'utf-8') > MAX_DIFF_SIZE) {
@@ -348,7 +363,7 @@ function fetchDiffFileList(job, worktreePath) {
   return execSync(
     `git diff --name-only origin/${job.targetBranch}...HEAD`,
     { cwd: worktreePath, encoding: 'utf-8' }
-  ).trim().split('\n').filter(Boolean);
+  ).trim().split('\n').filter(Boolean).filter(f => !IGNORED_REVIEW_EXTENSIONS.some(ext => f.endsWith(ext)));
 }
 
 // --- Bloqueio por prompt injection ---
@@ -886,6 +901,13 @@ async function executeReviewJob(job) {
     // Clonar e preparar repositório
     console.log(`[review] ${jobTag(job)} clonando repositório e preparando diff`);
     const { diff, truncated } = await fetchPRDiff(job, workDir);
+
+    if (!diff || diff.trim() === '') {
+      await commentOnPR(job, '📄 Este PR contém apenas arquivos de documentação (.md). Nenhum arquivo de código para revisar.');
+      job.status = 'done';
+      upsertJob(job);
+      return;
+    }
 
     if (truncated) {
       await commentOnPR(job, '⚠️ O diff deste PR é muito grande. O review será parcial (primeiros 500KB do diff).');
