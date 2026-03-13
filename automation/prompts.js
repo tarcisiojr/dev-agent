@@ -173,6 +173,16 @@ NÃO faça push nem abra PR/MR — isso será feito em uma fase separada.
 IMPORTANTE: Se já existem tarefas marcadas como - [x], elas já foram implementadas.
 Continue a partir da primeira tarefa pendente (- [ ]).
 
+AÇÕES MANUAIS:
+Se durante a implementação você identificar ações que precisam ser feitas manualmente
+pelo usuário (criar variáveis de ambiente, configurar serviços, rodar migrations, etc.),
+crie o arquivo ${specsDir(job)}/MANUAL_STEPS.md com a lista de ações.
+Formato:
+- Cada ação como checkbox: - [ ] Descrição clara da ação
+- Agrupe por contexto se necessário (ex: ## Servidor, ## CI/CD)
+- Inclua comandos exatos quando possível
+- Só crie este arquivo se realmente houver ações manuais necessárias
+
 ${AUTONOMY_RULES}`;
 }
 
@@ -196,8 +206,13 @@ INSTRUÇÕES:
 1. Verifique que o repositório está correto e na branch fix/issue-${job.issueId}
 2. Verifique que existem commits na branch (git log --oneline origin/main..HEAD)
 3. Faça push da branch: git push origin fix/issue-${job.issueId}
-4. Abra um ${mrOrPr}: ${mrCommand}
-5. Confirme que o ${mrOrPr} foi criado com sucesso
+4. Verifique se existe o arquivo ${specsDir(job)}/MANUAL_STEPS.md
+5. Abra um ${mrOrPr} com descrição detalhada:
+   - Use: ${mrCommand} --title "fix: issue #${job.issueId}" --body "CORPO"
+   - No CORPO inclua: resumo das mudanças e referência à issue (#${job.issueId})
+   - Se ${specsDir(job)}/MANUAL_STEPS.md existir, inclua seu conteúdo na descrição
+     sob a seção "## Ações manuais necessárias" para que o revisor saiba o que fazer
+6. Confirme que o ${mrOrPr} foi criado com sucesso
 
 Se o push falhar por causa de conflitos, tente fazer rebase:
    git fetch origin && git rebase origin/main

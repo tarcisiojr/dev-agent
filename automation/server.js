@@ -488,7 +488,18 @@ async function executeJob(job) {
 
     const { total, done } = countTasks(issueDir, job);
     const phases = PHASE_ORDER.map(p => `✅ ${PHASE_LABELS[p]}`).join(' → ');
-    await commentOnIssue(job, `✅ **Concluído** — ${done}/${total} tarefas implementadas\n\n${phases}\n\n⏱️ ${duration}s`);
+
+    // Verificar se há ações manuais pendentes
+    const manualStepsPath = path.join(issueDir, specsDir(job), 'MANUAL_STEPS.md');
+    let manualBlock = '';
+    try {
+      const manualContent = fs.readFileSync(manualStepsPath, 'utf-8');
+      manualBlock = `\n\n---\n\n⚠️ **Ações manuais necessárias:**\n\n${manualContent}`;
+    } catch {
+      // Sem ações manuais
+    }
+
+    await commentOnIssue(job, `✅ **Concluído** — ${done}/${total} tarefas implementadas\n\n${phases}\n\n⏱️ ${duration}s${manualBlock}`);
 
   } finally {
     // Limpar diretório de trabalho após conclusão
