@@ -605,14 +605,24 @@ async function executeJob(job) {
         return;
       }
 
-      // Fase concluída — ações pós-fase (sem comentar na issue)
+      // Fase concluída — comentar progresso e executar ações pós-fase
+      const phaseIndex = PHASE_ORDER.indexOf(phaseName) + 1;
+      const totalPhases = PHASE_ORDER.length;
+
       if (phaseName === 'tasks') {
         const { total } = countTasks(issueDir, job);
         job.totalTasks = total;
         upsertJob(job);
         squashSddCommits(issueDir, job);
+        await commentOnIssue(job, `📝 **Fase ${phaseIndex}/${totalPhases}** — ${total} tarefas identificadas`);
       } else if (phaseName === 'implementation') {
         squashImplCommits(issueDir, job);
+        const { total, done } = countTasks(issueDir, job);
+        await commentOnIssue(job, `⚙️ **Fase ${phaseIndex}/${totalPhases}** — Implementação concluída (${done}/${total} tarefas)`);
+      } else if (phaseName === 'finalize') {
+        // Comentário final cobre a finalização
+      } else {
+        await commentOnIssue(job, `${phaseName === 'requirements' ? '📋' : '🏗️'} **Fase ${phaseIndex}/${totalPhases}** — ${PHASE_LABELS[phaseName]} concluído`);
       }
     }
 
@@ -731,23 +741,42 @@ async function postGitHubReview(job, reviewData) {
     body: formatCommentBody(c),
   }));
 
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-      'User-Agent': 'dev-agent',
-    },
-    body: JSON.stringify({
-      event: 'COMMENT',
-      body: `🤖 **Code Review Automatizado** — ${reviewData.verdict === 'APPROVE' ? '✅ Aprovado' : '🔄 Alterações solicitadas'}\n\n${reviewData.summary}`,
-      comments,
-    }),
-  });
+  const verdictText = reviewData.verdict === 'APPROVE' ? '✅ Aprovado' : '🔄 Alterações solicitadas';
+  const summaryBody = `🤖 **Code Review Automatizado** — ${verdictText}\n\n${reviewData.summary}`;
 
-  if (!res.ok) {
-    throw new Error(`GitHub Review API retornou ${res.status}: ${await res.text()}`);
+  // Tentar postar review com inline comments
+  if (comments.length > 0) {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        'User-Agent': 'dev-agent',
+      },
+      body: JSON.stringify({
+        event: 'COMMENT',
+        body: summaryBody,
+        comments,
+      }),
+    });
+
+    if (res.ok) return;
+
+    // Fallback: inline comments falharam (path/line inválidos)
+    // Postar como comentário geral com os findings listados
+    console.log(`[review] ${jobTag(job)} inline comments falharam (${res.status}), usando fallback com comentário geral`);
   }
+
+  // Fallback: postar tudo como comentário geral formatado
+  let body = summaryBody;
+  if (reviewData.comments.length > 0) {
+    body += '\n\n---\n\n### Comentários do review\n';
+    for (const c of reviewData.comments) {
+      body += `\n${formatCommentBody(c)}\n📄 \`${c.path}:${c.line}\`\n`;
+    }
+  }
+
+  await commentOnPR(job, body);
 }
 
 /** Posta review no GitLab (uma request por comment + nota geral) */
@@ -827,6 +856,8 @@ async function executeReviewJob(job) {
     // Buscar comentários existentes
     const existingComments = await fetchExistingComments(job);
     console.log(`[review] ${jobTag(job)} comentários existentes: ${existingComments ? 'sim' : 'nenhum'}`);
+
+    await commentOnPR(job, `📂 **Analisando diff** — ${diff.split('\n').length} linhas de alterações${truncated ? ' (truncado)' : ''}`);
 
     // Spawnar Claude para análise
     const prompt = buildCodeReviewPrompt(job, diff, existingComments);
