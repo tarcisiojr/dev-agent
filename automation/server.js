@@ -1034,17 +1034,17 @@ const server = http.createServer((req, res) => {
   let body = '';
   req.on('data', (chunk) => { body += chunk; });
   req.on('end', () => {
-    try {
-      handleWebhook(req.headers, body, res);
-    } catch (err) {
+    handleWebhook(req.headers, body, res).catch((err) => {
       console.error('[erro] Falha ao processar webhook:', err.message);
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: 'Internal error' }));
-    }
+      if (!res.headersSent) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Internal error' }));
+      }
+    });
   });
 });
 
-function handleWebhook(headers, body, res) {
+async function handleWebhook(headers, body, res) {
   // Detectar plataforma
   const platform = detectPlatform(headers);
   if (!platform) {
