@@ -924,7 +924,7 @@ async function executeReviewJob(job) {
     const existingComments = await fetchExistingComments(job);
     console.log(`[review] ${jobTag(job)} comentários existentes: ${existingComments ? 'sim' : 'nenhum'}`);
 
-    // Ponto de verificação 2 — verificar existingComments antes de passar ao Claude
+    // Ponto de verificação 3 — verificar existingComments antes de passar ao Claude
     if (existingComments) {
       const commentsCheck = detectPromptInjection(existingComments);
       if (commentsCheck.detected) {
