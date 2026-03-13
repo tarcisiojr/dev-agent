@@ -242,13 +242,13 @@ const PHASE_PROMPT_BUILDERS = {
   finalize: buildFinalizePrompt,
 };
 
-/** Mensagens de progresso por fase concluída */
-const PHASE_COMMENTS = {
-  requirements: '📋 **Fase 1/5** — Requisitos definidos',
-  design: '🏗️ **Fase 2/5** — Design definido',
-  tasks: null, // tratado separadamente para contar tasks
-  implementation: null, // tratado separadamente
-  finalize: null, // tratado separadamente
+/** Labels curtos de cada fase (usados no resumo final) */
+const PHASE_LABELS = {
+  requirements: 'Requisitos',
+  design: 'Design',
+  tasks: 'Tarefas',
+  implementation: 'Implementação',
+  finalize: 'Finalização',
 };
 
 /** Ordem das fases do pipeline */
@@ -468,28 +468,14 @@ async function executeJob(job) {
         return;
       }
 
-      // Fase concluída — comentar progresso com conteúdo do artefato
-      const artifactContent = readPhaseArtifact(issueDir, phaseName, job);
-      const contentBlock = artifactContent
-        ? `\n\n<details>\n<summary>📄 Ver documento gerado</summary>\n\n${artifactContent}\n\n</details>`
-        : '';
-
+      // Fase concluída — ações pós-fase (sem comentar na issue)
       if (phaseName === 'tasks') {
         const { total } = countTasks(issueDir, job);
         job.totalTasks = total;
         upsertJob(job);
-        await commentOnIssue(job, `📝 **Fase 3/5** — ${total} tarefas identificadas${contentBlock}`);
-        // Squash dos commits SDD (fases 1-3) em um único commit
         squashSddCommits(issueDir, job);
       } else if (phaseName === 'implementation') {
-        const { total, done } = countTasks(issueDir, job);
-        await commentOnIssue(job, `⚙️ **Fase 4/5** — Implementação concluída — ${done}/${total} tarefas`);
-        // Squash dos commits de implementação em um único commit
         squashImplCommits(issueDir, job);
-      } else if (phaseName === 'finalize') {
-        await commentOnIssue(job, `🚀 **Fase 5/5** — Push e PR/MR criados`);
-      } else if (PHASE_COMMENTS[phaseName]) {
-        await commentOnIssue(job, `${PHASE_COMMENTS[phaseName]}${contentBlock}`);
       }
     }
 
@@ -499,7 +485,10 @@ async function executeJob(job) {
 
     job.status = 'done';
     upsertJob(job);
-    await commentOnIssue(job, `✅ **Claude Code** finalizou o trabalho nesta issue. Um PR/MR deve ter sido criado. Por favor, revise as mudanças.\n\n⏱️ Tempo total: ${duration}s`);
+
+    const { total, done } = countTasks(issueDir, job);
+    const phases = PHASE_ORDER.map(p => `✅ ${PHASE_LABELS[p]}`).join(' → ');
+    await commentOnIssue(job, `✅ **Concluído** — ${done}/${total} tarefas implementadas\n\n${phases}\n\n⏱️ ${duration}s`);
 
   } finally {
     // Limpar diretório de trabalho após conclusão
