@@ -4,6 +4,7 @@ const { spawn, execSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
 const { loadJobs, upsertJob, generateJobId } = require('./jobStore');
+const { detectPromptInjection } = require('./promptInjectionDetector');
 const {
   buildRequirementsPrompt,
   buildDesignPrompt,
@@ -348,6 +349,43 @@ function fetchDiffFileList(job, worktreePath) {
     `git diff --name-only origin/${job.targetBranch}...HEAD`,
     { cwd: worktreePath, encoding: 'utf-8' }
   ).trim().split('\n').filter(Boolean);
+}
+
+// --- Bloqueio por prompt injection ---
+
+/**
+ * Bloqueia um job detectado como prompt injection.
+ * Loga o evento de auditoria, atualiza o jobStore e notifica via commentFn.
+ *
+ * @param {object} job
+ * @param {string} field - campo onde foi detectado (title, description, diff, existingComments)
+ * @param {{ detected: boolean, rule: string, match: string }} detectionResult
+ * @param {function} commentFn - função async (job, message) para comentar na issue/PR
+ */
+async function blockJob(job, field, detectionResult, commentFn) {
+  const detectedAt = new Date().toISOString();
+
+  console.log(
+    `[security] ${jobTag(job)} Prompt injection detectado — campo: ${field}, regra: ${detectionResult.rule}, trecho: "${detectionResult.match}"`
+  );
+
+  job.status = 'blocked';
+  job.blockedReason = {
+    field,
+    rule: detectionResult.rule,
+    match: detectionResult.match,
+    detectedAt,
+  };
+  upsertJob(job);
+
+  const message = [
+    '🚫 **Esta issue foi bloqueada** por suspeita de prompt injection.',
+    '',
+    'O conteúdo da issue contém padrões que podem comprometer a segurança do agente.',
+    'Se você acredita que este é um falso positivo, entre em contato com um administrador.',
+  ].join('\n');
+
+  await commentFn(job, message);
 }
 
 // --- Pipeline SDD ---
@@ -853,9 +891,25 @@ async function executeReviewJob(job) {
       await commentOnPR(job, '⚠️ O diff deste PR é muito grande. O review será parcial (primeiros 500KB do diff).');
     }
 
+    // Ponto de verificação 2 — verificar diff antes de passar ao Claude
+    const diffCheck = detectPromptInjection(diff);
+    if (diffCheck.detected) {
+      await blockJob(job, 'diff', diffCheck, commentOnPR);
+      return;
+    }
+
     // Buscar comentários existentes
     const existingComments = await fetchExistingComments(job);
     console.log(`[review] ${jobTag(job)} comentários existentes: ${existingComments ? 'sim' : 'nenhum'}`);
+
+    // Ponto de verificação 2 — verificar existingComments antes de passar ao Claude
+    if (existingComments) {
+      const commentsCheck = detectPromptInjection(existingComments);
+      if (commentsCheck.detected) {
+        await blockJob(job, 'existingComments', commentsCheck, commentOnPR);
+        return;
+      }
+    }
 
     await commentOnPR(job, `📂 **Analisando diff** — ${diff.split('\n').length} linhas de alterações${truncated ? ' (truncado)' : ''}`);
 
@@ -1006,6 +1060,16 @@ function handleWebhook(headers, body, res) {
     }
 
     const job = extractPullRequestData(platform, payload);
+
+    // Ponto de verificação 1 — review job: verificar title
+    const titleCheckReview = detectPromptInjection(job.title);
+    if (titleCheckReview.detected) {
+      await blockJob(job, 'title', titleCheckReview, commentOnPR);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'blocked', reason: 'prompt_injection' }));
+      return;
+    }
+
     enqueue(job);
 
     res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -1036,8 +1100,24 @@ function handleWebhook(headers, body, res) {
     return;
   }
 
-  // Extrair dados e enfileirar
+  // Extrair dados e verificar prompt injection antes de enfileirar
   const job = extractIssueData(platform, payload);
+
+  // Ponto de verificação 1 — issue job: verificar title e description
+  const fieldsToCheck = [
+    { field: 'title', value: job.title },
+    { field: 'description', value: job.description },
+  ];
+  for (const { field, value } of fieldsToCheck) {
+    const result = detectPromptInjection(value);
+    if (result.detected) {
+      await blockJob(job, field, result, commentOnIssue);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'blocked', reason: 'prompt_injection' }));
+      return;
+    }
+  }
+
   enqueue(job);
 
   res.writeHead(200, { 'Content-Type': 'application/json' });
